@@ -1,4 +1,21 @@
-// import scss partials here
+// n.b. import scss partials here
+
 body {
   font-family: 'Helvetica', sans-serif;
+}
+
+ul {
+  &.nav {
+    justify-content: flex-end;
+  }
+}
+
+li {
+  &.home-button {
+    margin-right: auto;
+  }
+}
+
+.centered-content {
+  text-align: center;
 }

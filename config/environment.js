@@ -1,6 +1,6 @@
 const port = process.env.PORT || 3000;
-const env = process.env.NODE_ENV || 'development';
-const dbURI = process.env.MONGODB_URI || `mongodb://localhost/express-lists-${env}`;
-const secret = process.env.SESSION_SECRET || 'YghT5s617/1{%sDt';
+// const env = process.env.NODE_ENV || 'development';
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/clothes-randomiser';
+const secret = process.env.SESSION_SECRET || 'secret';
 
-module.exports = { port, env, dbURI, secret };
+module.exports = { port, dbURI, secret };
