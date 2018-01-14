@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Item = require('../models/user');
 
 // ask what "users" does!
 function indexRoute(req, res) {
@@ -13,7 +14,10 @@ function indexRoute(req, res) {
 // }
 
 function allOutfitsPublicRoute(req, res) {
-  res.render('statics/all-outfits-public');
+  Item
+    .find()
+    .exec()
+    .then((items) => res.render('statics/all-outfits-public', {items}));
 }
 
 module.exports = {

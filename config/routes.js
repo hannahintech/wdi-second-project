@@ -11,7 +11,7 @@ router.route('/')
 
 // nb path for url is not the same as ejs file name, can I have duplicate url paths? (with separate statics?)
 router.route('/all-outfits')
-  .get(statics.allOutfitsPublicRoute);
+  .get(statics.allOutfitsPublic);
 
 // registration related
 router.route('/register')

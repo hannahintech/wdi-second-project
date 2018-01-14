@@ -9,7 +9,7 @@ const session        = require('express-session');
 const User           = require('./models/user');
 const flash          = require('express-flash');
 
-const { port, dbURI, secret } = require('./config/environment');
+const { port, env, dbURI, secret } = require('./config/environment');
 // is the dot necessary at all?
 
 const app = express();
