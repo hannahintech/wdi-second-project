@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const Item = require('../models/user');
+const Item = require('../models/item');
 
 // ask what "users" does!
 function indexRoute(req, res) {

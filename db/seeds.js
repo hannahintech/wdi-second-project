@@ -14,6 +14,13 @@ Item
     weatherUse: ['mild', 'warm'],
     image: 'https://jigsaw.btxmedia.com/pws/client/images/catalogue/products/1014404/AS011/large/1014404_4.jpg',
     specialOccassion: true
+  },{
+    category: ['trousers'],
+    colour: ['white'],
+    pattern: ['plain'],
+    weatherUse: ['warm'],
+    image: 'https://jigsaw.btxmedia.com/pws/client/images/catalogue/products/1014404/AS011/large/1014404_4.jpg',
+    specialOccassion: true
   }])
   .then((items) => {
     console.log(`${items.length} items created!`);
