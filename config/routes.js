@@ -4,7 +4,7 @@ const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const statics = require('../controllers/statics');
 const outfits = require('../controllers/outfits');
-
+const items = require('../controllers/items');
 
 
 router.route('/')
@@ -15,8 +15,10 @@ router.route('/all-outfits')
   .get(outfits.allOutfits);
 
 router.get('/generate-outfit', (req, res) => res.render('outfits/generate-outfit.ejs'));
-router.get('/add-item', (req, res) => res.render('items/add-item.ejs'));
+router.get('/add-item', (req, res) => res.render('items/new.ejs'));
 
+router.route('/items')
+  .post(items.addItem);
 
 // registration related
 router.route('/register')

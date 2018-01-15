@@ -25,8 +25,16 @@ div {
   &.test {
     background-color: grey;
   }
+  &.form-check {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
 }
 
 img {
   max-height: 300px;
+}
+
+#colour1 {
+  color: red;
 }

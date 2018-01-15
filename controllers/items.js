@@ -1,13 +1,17 @@
 const Item = require('../models/item');
-const Outfit = require('../models/outfit');
 
-// function addItem(req, res) {
-//   Item
-//     .find()
-//     .exec()
-//     .then((items) => res.render('outfits/all-outfits', { items }));
-// }
+function createItemRoute(req, res){
+  console.log(req.body);
+  Item
+    .create(req.body)
+    .then(() => {
+      console.log(req.body);
+    })
+    .catch((err) => {
+      res.status(500).render('error', { err });
+    });
+}
 
 module.exports = {
-  addItem
+  addItem: createItemRoute
 };

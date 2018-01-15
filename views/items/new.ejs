@@ -1,0 +1,70 @@
+<div class="container">
+  <h2>Add an Item</h2>
+  <form method="POST" action="/add-item">
+    <div class="form-group">
+      <label for="category">Type of Item</label>
+      <select class="form-control" id="category">
+        <option name="category" id="category1">hat</option>
+        <option name="category" id="category2">scarf or shawl</option>
+        <option name="category" id="category3">coat, thick jumper, or warm cardigan</option>
+        <option name="category" id="category4">top</option>
+        <option name="category" id="category5">skirt, dress, or trousers</option>
+        <option name="category" id="category6">shoes</option>
+        <option name="category" id="category7">jewellery</option>
+        <option name="category" id="category8">bag</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="colour">Colour</label>
+      <select class="form-control" name="colour" id="colour">
+        <option id="colour1">red</option>
+        <option id="colour2">red-orange</option>
+        <option id="colour3">orange</option>
+        <option id="colour4">yellow-orange</option>
+        <option id="colour5">yellow</option>
+        <option id="colour6">yellow-green</option>
+        <option id="colour7">green</option>
+        <option id="colour8">blue-green</option>
+        <option id="colour9">blue</option>
+        <option id="colour10">blue-violet</option>
+        <option id="colour12">violet</option>
+        <option id="colour11">red-violet</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="pattern">Pattern</label>
+      <select class="form-control" id="pattern" name="pattern">
+        <option>plain</option>
+        <option>striped</option>
+        <option>floral</option>
+        <option>checkered</option>
+        <option>geometric pattern</option>
+        <option>writing</option>
+        <option>hobby related</option>
+        <option>symbol</option>
+        <option>other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="weather">Weather</label>
+      <select name="weather" class="form-control" id="weather">
+        <option>hot</option>
+        <option>warm</option>
+        <option>mild</option>
+        <option>cold</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="url">URL</label>
+      <input type="text" class="form-control" placeholder="Username" name="username">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="special-occassion">
+      <label class="form-check-label" for="specialOccassion" name="specialOccassion">special occasion item!</label>
+    </div>
+    <div class="sumbit-item">
+      <button type="submit" class="btn btn-outline-success">Add Item</button>
+    </div>
+  </form>
+</div>
+<%# multi-select: exampleFormControlSelect1 and multiple class="form-control" %>
