@@ -11,6 +11,7 @@ ul {
 }
 
 li {
+  list-style-type: none;
   &.home-button {
     margin-right: auto;
   }
@@ -24,4 +25,8 @@ div {
   &.test {
     background-color: grey;
   }
+}
+
+img {
+  max-height: 300px;
 }

@@ -3,7 +3,7 @@ mongoose.Promise = require('bluebird');
 const Item = require('../models/item');
 const User = require('../models/user'); // just for development
 
-const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/clothes-randomiser-development';
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/clothes-randomiser';
 mongoose.connect(dbURI);
 
 Item
