@@ -15,18 +15,23 @@ function createItemRoute(req, res){
 
 function generateOutfit(req, res) {
   Item
-    .find('category')
-  // look through items based on category and pick one of each (every hat)
-  // array of items (hats)
+  // find items based on category (ie hat)
+    .findOne(req.category)
+    .then((items) => {
+      console.log(items);
+      res.render('outfits/all-outfits', { items });
+    });
+  // will see an array of items (hats)
+  // pick one (hat)
   // randomly choose a hat
-  // store that in an element of a new array
+  // store that hat as an element of a new array 'itemGroup'
   // repeat 8 times
-  // then you have an "outfit"
+  // then you have a complete "itemGroup"
   // which can then be displayed using ejs
-  // mongoose methods
+  // explore mongoose methods
 }
 
 module.exports = {
-  addItem: createItemRoute
+  addItem: createItemRoute,
   generateOutfit
 };

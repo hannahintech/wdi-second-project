@@ -1,12 +1,19 @@
-const Outfit = require('../models/outfit');
+const Item = require('../models/item');
 
+
+// function allOutfitsRoute(req, res) {
+//   Outfit
+//     .find()
+//     .populate('items')
+//     .exec()
+//     .then((outfits) => res.render('outfits/all-outfits', { outfits }));
+// }
 
 function allOutfitsRoute(req, res) {
-  Outfit
+  Item
     .find()
-    .populate('items')
     .exec()
-    .then((outfits) => res.render('outfits/all-outfits', { outfits }));
+    .then((items) => res.render('outfits/all-outfits', { items }));
 }
 
 

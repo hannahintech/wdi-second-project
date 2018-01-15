@@ -6,9 +6,11 @@
   <div class="container">
     <a href="/all-outfits" class="btn btn-outline-primary btn-lg">View posted outfits</a>
   </div>
+  <% if (locals.isLoggedIn) { %>
   <div class="container">
     <a href="/add-item" class="btn btn-outline-secondary btn-lg">(temporary) add item</a>
   </div>
+  <% } %>
   <% if (!locals.isLoggedIn) { %>
   <div class="container">
     <a href="/register" class="btn btn-outline-danger btn-lg">Sign up to save your own!</a>

@@ -12,7 +12,7 @@ function createRoute(req, res){
     .create(req.body)
     .then((user) => {
       req.flash('info', `Thanks for registering, ${user.username}! Please login`);
-      res.redirect('/all-outfits');
+      res.redirect('/login');
     })
     .catch((err) => {
       if(err.name === 'ValidationError') {

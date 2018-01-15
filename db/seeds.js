@@ -36,3 +36,8 @@ Item
   .finally(() => {
     mongoose.connection.close();
   });
+
+// 
+//   throw err;
+//   ^
+// MongoError: topology was destroyed
