@@ -1,34 +1,32 @@
 <div class="container">
   <h2>Add an Item</h2>
-  <form method="POST" action="/add-item">
+  <form method="POST" action="/items">
     <div class="form-group">
       <label for="category">Type of Item</label>
-      <select class="form-control" id="category">
-        <option name="category" id="category1">hat</option>
-        <option name="category" id="category2">scarf or shawl</option>
-        <option name="category" id="category3">coat, thick jumper, or warm cardigan</option>
-        <option name="category" id="category4">top</option>
-        <option name="category" id="category5">skirt, dress, or trousers</option>
-        <option name="category" id="category6">shoes</option>
-        <option name="category" id="category7">jewellery</option>
-        <option name="category" id="category8">bag</option>
+      <select name="category" class="form-control" id="category">
+        <option id="category1">hat</option>
+        <option id="category2">scarf or shawl</option>
+        <option id="category3">coat, thick jumper, or warm cardigan</option>
+        <option id="category4">top</option>
+        <option id="category5">skirt, dress, or trousers</option>
+        <option id="category6">shoes</option>
+        <option id="category7">jewellery</option>
+        <option id="category8">bag</option>
       </select>
     </div>
     <div class="form-group">
       <label for="colour">Colour</label>
-      <select class="form-control" name="colour" id="colour">
+      <select multiple class="form-control form-colours" name="colour" id="colour">
         <option id="colour1">red</option>
-        <option id="colour2">red-orange</option>
-        <option id="colour3">orange</option>
-        <option id="colour4">yellow-orange</option>
-        <option id="colour5">yellow</option>
-        <option id="colour6">yellow-green</option>
-        <option id="colour7">green</option>
-        <option id="colour8">blue-green</option>
-        <option id="colour9">blue</option>
-        <option id="colour10">blue-violet</option>
-        <option id="colour12">violet</option>
-        <option id="colour11">red-violet</option>
+        <option id="colour2">orange</option>
+        <option id="colour3">yellow</option>
+        <option id="colour4">green</option>
+        <option id="colour5">blue-green</option>
+        <option id="colour6">blue</option>
+        <option id="colour7">violet</option>
+        <option id="colour8">pink</option>
+        <option>multi-coloured</option>
+        <option>other</option>
       </select>
     </div>
     <div class="form-group">
@@ -47,7 +45,7 @@
     </div>
     <div class="form-group">
       <label for="weather">Weather</label>
-      <select name="weather" class="form-control" id="weather">
+      <select multiple name="weather" class="form-control" id="weather">
         <option>hot</option>
         <option>warm</option>
         <option>mild</option>
@@ -55,8 +53,8 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="url">URL</label>
-      <input type="text" class="form-control" placeholder="Username" name="username">
+      <label for="image">URL</label>
+      <input type="text" class="form-control" placeholder="url address" name="image">
     </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="special-occassion">

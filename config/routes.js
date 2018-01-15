@@ -20,6 +20,7 @@ router.get('/add-item', (req, res) => res.render('items/new.ejs'));
 router.route('/items')
   .post(items.addItem);
 
+
 // registration related
 router.route('/register')
   .get(registrations.new)

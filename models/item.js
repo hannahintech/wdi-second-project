@@ -4,7 +4,7 @@ const itemSchema = new mongoose.Schema({
   category: { type: String, required: true },
   colour: { type: Array, required: true },
   pattern: { type: String, required: true },
-  weatherUse: { type: Array, required: true },
+  weather: { type: Array, required: true },
   image: { type: String, required: true},
   specialOccassion: Boolean
 });

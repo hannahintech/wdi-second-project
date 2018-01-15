@@ -1,13 +1,15 @@
-
-const Item = require('../models/item');
+const Outfit = require('../models/outfit');
 
 
 function allOutfitsRoute(req, res) {
-  Item
+  Outfit
     .find()
+    .populate('items')
     .exec()
-    .then((items) => res.render('outfits/all-outfits', {items}));
+    .then((outfits) => res.render('outfits/all-outfits', { outfits }));
 }
+
+
 
 module.exports = {
   allOutfits: allOutfitsRoute
