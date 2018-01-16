@@ -11,6 +11,11 @@ const nodemon     = require('gulp-nodemon');
 const clean       = require('gulp-clean');
 const sequence    = require('run-sequence');
 
+browserSync.init({
+  open: false,
+  notify: false
+});
+
 function reportError(error) {
   notify({
     title: `Task Failed [${error.plugin}]`,

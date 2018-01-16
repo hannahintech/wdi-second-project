@@ -4,10 +4,13 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
-nav {
-  &.logged-in-nav {
-    font-size: 20px;
-  }
+.logged-in-nav {
+    font-size: 25px;
+    // margin-left: auto;
+}
+
+.dropdown-item {
+  font-size: 20px;
 }
 
 .nav-outlier {

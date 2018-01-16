@@ -5,6 +5,7 @@ const sessions = require('../controllers/sessions');
 const statics = require('../controllers/statics');
 // const outfits = require('../controllers/outfits');
 const items = require('../controllers/items');
+// const secureRoute = require('../lib/secureRoute');
 
 
 router.route('/')
@@ -21,6 +22,15 @@ router.get('/add-item', (req, res) => res.render('items/new.ejs'));
 router.route('/items')
   .post(items.addItem);
 
+
+// newly added
+router.route('/items/:id')
+  .get(items.show)
+  .put(items.update)
+  .delete(items.delete);
+
+router.route('/items/:id/edit')
+  .get(items.edit);
 
 // registration related
 router.route('/register')

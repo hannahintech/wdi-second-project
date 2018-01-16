@@ -6,8 +6,8 @@ const routes         = require('./config/routes');
 const mongoose       = require('mongoose');
 mongoose.Promise     = require('bluebird');
 const session        = require('express-session');
-const User           = require('./models/user');
 const flash          = require('express-flash');
+const authentication = require('./lib/authentication');
 
 const { port, env, dbURI, secret } = require('./config/environment');
 // is the dot necessary at all?
@@ -33,28 +33,7 @@ app.use(session({
 }));
 
 
-app.use((req, res, next) => {
-  if (!req.session.userId) return next();
-
-  User
-    .findById(req.session.userId)
-    .exec()
-    .then((user) => {
-      if(!user) {
-        return req.session.regenerate(() => {
-          res.redirect('/');
-        });
-      }
-
-      // Re-assign the session id for good measure
-      req.session.userId = user._id;
-
-      res.locals.user = user;
-      res.locals.isLoggedIn = true;
-
-      next();
-    });
-});
+app.use(authentication);
 
 app.use(flash());
 
