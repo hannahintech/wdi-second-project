@@ -27,30 +27,33 @@ function itemsIndex(req, res) {
     .then((items) => res.render('items/show-all-items', { items }));
 }
 
-function showItemRoute(req, res, next) {
+function showItemRoute(req, res) {
   Item
     .findById(req.params.id)
     .populate('createdBy comments.createdBy')
     .exec()
     .then((item) => {
       if(!item) return res.notFound();
-      // here we are adding 'hotel' to the locals object after res.render
-      return res.render('all-items/show', { item });
+      return res.render('items/show', { item });
     })
-    .catch(next);
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
-// function editItemRoute(req, res, next) {
-//   Item
-//     .findById(req.params.id)
-//     .exec()
-//     .then((item) => {
-//       if(!item) return res.notFound();
-//       return res.render('items/edit', { item });
-//     })
-//     .catch(next);
-// }
-//
+function editItemRoute(req, res) {
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then((item) => {
+      if(!item) return res.notFound();
+      return res.render('items/edit', { item });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 // function updateItemRoute(req, res, next) {
 //   Item
 //     .findById(req.params.id)
@@ -87,8 +90,8 @@ module.exports = {
   newItem: newItemRoute,
   addItem: createItemRoute,
   allItems: itemsIndex,
-  showItem: showItemRoute
-  // editItem: editItemRoute,
+  showItem: showItemRoute,
+  editItem: editItemRoute
   // updateItem: updateItemRoute
   // deleteItem: deleteItemRoute
   // generateOutfit

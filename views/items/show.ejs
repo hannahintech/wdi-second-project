@@ -1,15 +1,32 @@
-<div "container">
-  <img src="<%= item.image %>" alt="<%= item.name %>">
-  <h2><%= item.category %></h2>
-  <h3>Created by: <%= item.createdBy.username %></h3>
+<%# remember to edit %>
+<div "container centered">
 
-  <p>
-    <%= item.colour %>
-    <%= item.weather %>
-    <%= item.pattern %>
-    <% if (item.specialOccassion) { %>
-      <p> This is something you'd wear for a special occassion! <p>
-    <% } else { %>
-      <p> This is not something you'd wear for a special occassion <p>
-    <% } %>
-  </p>
+      <img src="<%= item.image %>" alt="<%= item.name %>">
+
+      <h2><%= item.category %></h2>
+
+      <% if(item.createdBy) { %>
+        <h3>Created by: <%= item.createdBy.username %></h3>
+      <% } %>
+
+      <p>Colours: <%= item.colour %><p>
+      <p>Use in <%= item.weather[0] %> or <%= item.weather[1] %> weather</p>
+      <p>Pattern: <%= item.pattern %></p>
+      <% if (item.specialOccassion) { %>
+        <p> This is something you'd wear for a special occassion! <p>
+      <% } else { %>
+        <p> This is not something you'd wear for a special occassion <p>
+      <% } %>
+      </p>
+
+</div>
+
+<p>add to collection - to come!</p>
+
+<% if(locals.isLoggedIn && item.belongsTo(user)) {%>
+ <a href="/items/<%= hotel.id %>/edit">Edit</a>
+ <form method="POST" action="/items/<%= hotel.id %>">
+   <input type="hidden" name="_method" value="DELETE">
+   <button>Delete</button>
+ </form>
+<% } %>

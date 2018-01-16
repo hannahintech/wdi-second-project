@@ -32,8 +32,8 @@ router.route('/all-items/:id')
 // .put(items.updateItem)
 // .delete(items.deleteItem);
 
-// router.route('/items/:id/edit')
-//   .get(items.edit);
+router.route('/items/:id/edit')
+  .get(items.editItem);
 
 // registration related
 router.route('/register')
