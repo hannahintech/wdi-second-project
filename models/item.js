@@ -10,8 +10,8 @@ const itemSchema = new mongoose.Schema({
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
-// itemSchema.methods.belongsTo = function itemBelongsTo(user) {
-//   return this.createdBy.id === user.id;
-// };
+itemSchema.methods.belongsTo = function itemBelongsTo(user) {
+  return this.createdBy.id === user.id;
+};
 
 module.exports = mongoose.model('Item', itemSchema);

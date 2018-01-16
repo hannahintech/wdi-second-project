@@ -4,6 +4,14 @@ function newItemRoute(req, res) {
   return res.render('items/new');
 }
 
+function itemsIndex(req, res) {
+  Item
+    .find()
+    .populate('createdBy item.createdBy')
+    .exec()
+    .then((items) => res.render('items/index', { items }));
+}
+
 function createItemRoute(req, res){
   console.log(req.body);
   req.body.createdBy = req.user;
@@ -12,19 +20,11 @@ function createItemRoute(req, res){
     .create(req.body)
     .then(() => {
       console.log(req.body);
-      res.redirect('show-all-items');
+      res.redirect('index');
     })
     .catch((err) => {
       console.log(err);
     });
-}
-
-function itemsIndex(req, res) {
-  Item
-    .find()
-    .populate('createdBy item.createdBy')
-    .exec()
-    .then((items) => res.render('items/show-all-items', { items }));
 }
 
 function showItemRoute(req, res) {
@@ -81,7 +81,7 @@ function updateItemRoute(req, res) {
 //       if(!item) return res.notFound();
 //       return item.remove();
 //     })
-//     .then(() => res.redirect('/show-all-items'))
+//     .then(() => res.redirect('/index'))
 //     .catch(next);
 // }
 
@@ -115,7 +115,7 @@ module.exports = {
 //       items.forEach((item) => {
 //         getOutfit();
 //       });
-//       res.render('outfits/show-all-items', outfit);
+//       res.render('outfits/index', outfit);
 //     });
 //
 // const getOutfit = function(item) {

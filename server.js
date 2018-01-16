@@ -8,6 +8,7 @@ mongoose.Promise     = require('bluebird');
 const session        = require('express-session');
 const flash          = require('express-flash');
 const authentication = require('./lib/authentication');
+const methodOverride = require('method-override');
 
 const { port, env, dbURI, secret } = require('./config/environment');
 // is the dot necessary at all?
@@ -32,6 +33,13 @@ app.use(session({
   saveUninitialized: false
 }));
 
+app.use(methodOverride(function (req) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    const method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
 
 app.use(authentication);
 

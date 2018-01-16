@@ -12,7 +12,7 @@ router.route('/')
   .get(statics.index);
 
 // nb path for url is not the same as ejs file name, can I have duplicate url paths? (with separate statics?)
-router.route('/show-all-items')
+router.route('/index')
   .get(items.allItems);
 // .get(items.generateOutfit);
 
@@ -25,14 +25,12 @@ router.route('/add-item')
 router.route('/items')
   .post(items.addItem);
 
-
-// newly added
-router.route('/all-items/:id')
-  .get(items.showItem);
-// .put(items.updateItem)
+router.route('/index/:id')
+  .get(items.showItem)
+  .put(items.updateItem);
 // .delete(items.deleteItem);
 
-router.route('/all-items/:id/edit')
+router.route('/index/:id/edit')
   .get(items.editItem);
 
 // registration related

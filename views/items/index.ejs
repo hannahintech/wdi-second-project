@@ -5,7 +5,7 @@
     <div class="row">
       <% items.forEach((item) => { %>
         <li class"col-lg-2">
-        <a href="/all-items/<%= item.id %>">
+        <a href="/index/<%= item.id %>">
 
         <img class="outfit-image" src="<%= item.image %>">
 
@@ -23,7 +23,7 @@
         <% items.forEach((item) => { %>
           <% if(item.createdBy && item.createdBy.username === locals.user.username) { %>
           <li class"col-lg-2">
-          <a href="/all-items/<%= item.id %>">
+          <a href="/index/<%= item.id %>">
 
             <img class="outfit-image" src="<%= item.image %>">
 
