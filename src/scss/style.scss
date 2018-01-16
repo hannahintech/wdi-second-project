@@ -28,7 +28,7 @@ li {
 }
 
 .centered-content {
-  text-align: center;
+  justify-content: center;
 }
 
 div {
@@ -39,16 +39,21 @@ div {
     padding-top: 10px;
     padding-bottom: 20px;
   }
-  // &.centered {
-  //   justify-content: center;
-  // }
 }
 
 img {
   max-height: 100px;
   width: auto;
+  &.show-page-image {
+    max-height: 250px;
+  }
 }
 
+.container {
+  &.last-container {
+    padding-bottom: 30px;
+  }
+}
 // img {
 //   &.outfit-image {
 //     max-

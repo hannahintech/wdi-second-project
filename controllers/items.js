@@ -30,7 +30,7 @@ function createItemRoute(req, res){
 function showItemRoute(req, res) {
   Item
     .findById(req.params.id)
-    .populate('createdBy comments.createdBy')
+    .populate('createdBy')
     .exec()
     .then((item) => {
       if(!item) return res.notFound();
@@ -65,10 +65,11 @@ function updateItemRoute(req, res) {
 
       return item.save();
     })
-    .then(() => res.redirect(`/items/${req.params.id}`))
+    .then(() => res.redirect('/index'))
     .catch((err) => {
       if(err.name === 'ValidationError') {
-        return res.badRequest(`/items/${req.params.id}/edit`, err.toString());
+        // flash message here!
+        return res.badRequest(`/index/${req.params.id}/edit`, err.toString());
       }
     });
 }

@@ -3,7 +3,7 @@ const router   = express.Router();
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const statics = require('../controllers/statics');
-// const outfits = require('../controllers/outfits');
+const outfits = require('../controllers/outfits');
 const items = require('../controllers/items');
 // const secureRoute = require('../lib/secureRoute');
 
@@ -16,7 +16,8 @@ router.route('/index')
   .get(items.allItems);
 // .get(items.generateOutfit);
 
-router.get('/generate-outfit', (req, res) => res.render('outfits/generate-outfit.ejs'));
+// router.route('/generate-outfit')
+//   .get(outfits.allItemsToOutfit);
 
 
 router.route('/add-item')

@@ -1,9 +1,13 @@
-
-
-// function allOutfitsRoute(req, res) {
+// const Outfit = require('../models/outfit');
+//
+// function allItemsToOutfit(req, res) {
 //   Outfit
 //     .find()
 //     .populate('items')
 //     .exec()
-//     .then((outfits) => res.render('items/index', { outfits }));
+//     .then((allItems) => res.render('outfits/generate-outfit', { allItems }));
 // }
+//
+// module.exports({
+//   allItemsToOutfit
+// });
