@@ -6,11 +6,18 @@ function createItemRoute(req, res){
     .create(req.body)
     .then(() => {
       console.log(req.body);
-      res.redirect('all-outfits');
+      res.redirect('show-all-items');
     })
     .catch((err) => {
       console.log(err);
     });
+}
+
+function showAllItems(req, res) {
+  Item
+    .find()
+    .exec()
+    .then((items) => res.render('items/show-all-items', { items }));
 }
 
 // function generateOutfit(req, res) {
@@ -21,7 +28,7 @@ function createItemRoute(req, res){
 //       items.forEach((item) => {
 //         getOutfit();
 //       });
-//       res.render('outfits/all-outfits', outfit);
+//       res.render('outfits/show-all-items', outfit);
 //     });
 //
 // const getOutfit = function(item) {
@@ -34,7 +41,8 @@ function createItemRoute(req, res){
 // }
 
 module.exports = {
-  addItem: createItemRoute
+  addItem: createItemRoute,
+  allItems: showAllItems
   // generateOutfit
 };
 
