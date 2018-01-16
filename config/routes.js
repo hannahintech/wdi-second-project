@@ -12,8 +12,8 @@ router.route('/')
 
 // nb path for url is not the same as ejs file name, can I have duplicate url paths? (with separate statics?)
 router.route('/all-outfits')
-  .get(outfits.allOutfits)
-  .get(items.generateOutfit);
+  .get(outfits.allOutfits);
+// .get(items.generateOutfit);
 
 router.get('/generate-outfit', (req, res) => res.render('outfits/generate-outfit.ejs'));
 router.get('/add-item', (req, res) => res.render('items/new.ejs'));

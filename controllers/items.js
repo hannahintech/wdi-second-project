@@ -13,25 +13,39 @@ function createItemRoute(req, res){
     });
 }
 
-function generateOutfit(req, res) {
-  Item
-  // find items based on category (ie hat)
-    .findOne(req.category)
-    .then((items) => {
-      console.log(items);
-      res.render('outfits/all-outfits', { items });
-    });
-  // will see an array of items (hats)
-  // pick one (hat)
-  // randomly choose a hat
-  // store that hat as an element of a new array 'itemGroup'
-  // repeat 8 times
-  // then you have a complete "itemGroup"
-  // which can then be displayed using ejs
-  // explore mongoose methods
-}
+// function generateOutfit(req, res) {
+//   Item
+//     .find()
+//     .then((items) => {
+//       console.log(items);
+//       items.forEach((item) => {
+//         getOutfit();
+//       });
+//       res.render('outfits/all-outfits', outfit);
+//     });
+//
+// const getOutfit = function(item) {
+//     for((i=0, i<item.length, i++) {
+//       let itemCategory = item.find({ category: i })
+//       let outfit =+ [itemCategory]
+//     });
+//     return outfit
+//   })
+// }
 
 module.exports = {
-  addItem: createItemRoute,
-  generateOutfit
+  addItem: createItemRoute
+  // generateOutfit
 };
+
+
+// generate outfit
+// find items based on category (ie hat)
+// will see an array of items (hats)
+// pick one (hat)
+// randomly choose a hat
+// store that hat as an element of a new array 'itemGroup'
+// repeat 8 times
+// then you have a complete "itemGroup"
+// which can then be displayed using ejs
+// explore mongoose methods

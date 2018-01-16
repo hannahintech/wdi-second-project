@@ -6,10 +6,6 @@ const User = require('../models/user'); // just for development
 const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/clothes-randomiser';
 mongoose.connect(dbURI);
 
-
-Item.collection.drop();
-User.collection.drop();
-
 Item
   .create([{
     category: 'top',
@@ -36,8 +32,3 @@ Item
   .finally(() => {
     mongoose.connection.close();
   });
-
-// 
-//   throw err;
-//   ^
-// MongoError: topology was destroyed

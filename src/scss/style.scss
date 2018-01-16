@@ -4,6 +4,12 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
+nav {
+  &.logged-in-nav {
+    font-size: 20px;
+  }
+}
+
 ul {
   &.nav {
     justify-content: flex-end;
