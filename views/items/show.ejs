@@ -24,8 +24,8 @@
 <p>add to collection - to come!</p>
 
 <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
- <a href="/items/<%= hotel.id %>/edit">Edit</a>
- <form method="POST" action="/items/<%= hotel.id %>">
+ <a href="/items/<%= item.id %>/edit">Edit</a>
+ <form method="POST" action="/items/<%= item.id %>">
    <input type="hidden" name="_method" value="DELETE">
    <button>Delete</button>
  </form>

@@ -54,25 +54,24 @@ function editItemRoute(req, res) {
     });
 }
 
-// function updateItemRoute(req, res, next) {
-//   Item
-//     .findById(req.params.id)
-//     .exec()
-//     .then((item) => {
-//       if(!item) return res.notFound();
-//
-//       item = Object.assign(item, req.body);
-//
-//       return item.save();
-//     })
-//     .then(() => res.redirect(`/items/${req.params.id}`))
-//     .catch((err) => {
-//       if(err.name === 'ValidationError') {
-//         return res.badRequest(`/items/${req.params.id}/edit`, err.toString());
-//       }
-//       next(err);
-//     });
-// }
+function updateItemRoute(req, res) {
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then((item) => {
+      if(!item) return res.notFound();
+
+      item = Object.assign(item, req.body);
+
+      return item.save();
+    })
+    .then(() => res.redirect(`/items/${req.params.id}`))
+    .catch((err) => {
+      if(err.name === 'ValidationError') {
+        return res.badRequest(`/items/${req.params.id}/edit`, err.toString());
+      }
+    });
+}
 
 // function deleteItemRoute(req, res, next) {
 //   Item
@@ -91,8 +90,8 @@ module.exports = {
   addItem: createItemRoute,
   allItems: itemsIndex,
   showItem: showItemRoute,
-  editItem: editItemRoute
-  // updateItem: updateItemRoute
+  editItem: editItemRoute,
+  updateItem: updateItemRoute
   // deleteItem: deleteItemRoute
   // generateOutfit
 };
