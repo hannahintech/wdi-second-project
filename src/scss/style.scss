@@ -10,17 +10,18 @@ nav {
   }
 }
 
+.nav-outlier {
+  margin-right: auto;
+}
+
 ul {
-  &.nav {
+  &.header-nav {
     justify-content: flex-end;
   }
 }
 
 li {
   list-style-type: none;
-  &.home-button {
-    margin-right: auto;
-  }
 }
 
 .centered-content {
