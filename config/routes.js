@@ -17,20 +17,23 @@ router.route('/show-all-items')
 // .get(items.generateOutfit);
 
 router.get('/generate-outfit', (req, res) => res.render('outfits/generate-outfit.ejs'));
-router.get('/add-item', (req, res) => res.render('items/new.ejs'));
+
+
+router.route('/add-item')
+  .get(items.newItem);
 
 router.route('/items')
   .post(items.addItem);
 
 
 // newly added
-router.route('/items/:id')
-  .get(items.show)
-  .put(items.update)
-  .delete(items.delete);
+router.route('/all-items/:id')
+  .get(items.showItem);
+// .put(items.updateItem)
+// .delete(items.deleteItem);
 
-router.route('/items/:id/edit')
-  .get(items.edit);
+// router.route('/items/:id/edit')
+//   .get(items.edit);
 
 // registration related
 router.route('/register')

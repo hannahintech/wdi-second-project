@@ -1,5 +1,9 @@
 const Item = require('../models/item');
 
+function newItemRoute(req, res) {
+  return res.render('items/new');
+}
+
 function createItemRoute(req, res){
   console.log(req.body);
   req.body.createdBy = req.user;
@@ -15,7 +19,7 @@ function createItemRoute(req, res){
     });
 }
 
-function showAllItems(req, res) {
+function itemsIndex(req, res) {
   Item
     .find()
     .populate('createdBy item.createdBy')
@@ -23,55 +27,70 @@ function showAllItems(req, res) {
     .then((items) => res.render('items/show-all-items', { items }));
 }
 
-function editItemRoute(req, res, next) {
+function showItemRoute(req, res, next) {
   Item
     .findById(req.params.id)
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((item) => {
       if(!item) return res.notFound();
-      return res.render('items/edit', { item });
+      // here we are adding 'hotel' to the locals object after res.render
+      return res.render('all-items/show', { item });
     })
     .catch(next);
 }
 
-function updateItemRoute(req, res, next) {
-  Item
-    .findById(req.params.id)
-    .exec()
-    .then((item) => {
-      if(!item) return res.notFound();
+// function editItemRoute(req, res, next) {
+//   Item
+//     .findById(req.params.id)
+//     .exec()
+//     .then((item) => {
+//       if(!item) return res.notFound();
+//       return res.render('items/edit', { item });
+//     })
+//     .catch(next);
+// }
+//
+// function updateItemRoute(req, res, next) {
+//   Item
+//     .findById(req.params.id)
+//     .exec()
+//     .then((item) => {
+//       if(!item) return res.notFound();
+//
+//       item = Object.assign(item, req.body);
+//
+//       return item.save();
+//     })
+//     .then(() => res.redirect(`/items/${req.params.id}`))
+//     .catch((err) => {
+//       if(err.name === 'ValidationError') {
+//         return res.badRequest(`/items/${req.params.id}/edit`, err.toString());
+//       }
+//       next(err);
+//     });
+// }
 
-      item = Object.assign(item, req.body);
-
-      return item.save();
-    })
-    .then(() => res.redirect(`/items/${req.params.id}`))
-    .catch((err) => {
-      if(err.name === 'ValidationError') {
-        return res.badRequest(`/items/${req.params.id}/edit`, err.toString());
-      }
-      next(err);
-    });
-}
-
-function deleteItemRoute(req, res, next) {
-  Item
-    .findById(req.params.id)
-    .exec()
-    .then((item) => {
-      if(!item) return res.notFound();
-      return item.remove();
-    })
-    .then(() => res.redirect('/show-all-items'))
-    .catch(next);
-}
+// function deleteItemRoute(req, res, next) {
+//   Item
+//     .findById(req.params.id)
+//     .exec()
+//     .then((item) => {
+//       if(!item) return res.notFound();
+//       return item.remove();
+//     })
+//     .then(() => res.redirect('/show-all-items'))
+//     .catch(next);
+// }
 
 module.exports = {
+  newItem: newItemRoute,
   addItem: createItemRoute,
-  allItems: showAllItems,
-  editItem: editItemRoute,
-  updateItem: updateItemRoute,
-  deleteItem: deleteItemRoute
+  allItems: itemsIndex,
+  showItem: showItemRoute
+  // editItem: editItemRoute,
+  // updateItem: updateItemRoute
+  // deleteItem: deleteItemRoute
   // generateOutfit
 };
 
