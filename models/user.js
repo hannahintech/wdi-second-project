@@ -5,9 +5,9 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, trim: true, unique: true },
   username: { type: String, required: true, trim: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  favouriteOutfits: [{ type: mongoose.Schema.ObjectId, ref: 'Outfit' }]
 });
-
 
 userSchema.virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {

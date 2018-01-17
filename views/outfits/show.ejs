@@ -28,11 +28,13 @@
     </p>
   </div>
 </div>
-
+<% if(locals.isLoggedIn) {%>
+  <% console.log(outfit); %>
 <div class="container last-container">
   <div class="row centered-content">
-    <p>add to collection - to come!</p>
+    <p>This is one of my favourite outfits</p>
   </div>
+<% } %>
 
   <% if(outfit.createdBy || locals.user === 'hannah') { %>
     <% if(locals.isLoggedIn && outfit.belongsTo(user)) {%>
@@ -50,3 +52,14 @@
   <% } %>
 
 </div>
+<% if(locals.isLoggedIn) {%>
+<div class="container last-container">
+  <form method="POST" action="/outfits/<%= outfit.id %>/favourite">
+    <div class="container last-container">
+      <div class="sumbit-item">
+        <button name="id" type="submit" class="btn btn-outline-success">Favourite</button>
+      </div>
+    </div>
+  </form>
+</div>
+<% } %>

@@ -4,6 +4,7 @@ const sessions = require('../controllers/sessions');
 const statics = require('../controllers/statics');
 const outfits = require('../controllers/outfits');
 const items = require('../controllers/items');
+const users = require('../controllers/users');
 // const secureRoute = require('../lib/secureRoute');
 
 router.route('/')
@@ -45,8 +46,11 @@ router.route('/outfits/:id')
   .put(outfits.updateOutfit)
   .delete(outfits.deleteOutfit);
 
-router.route('/outfit/:id/edit')
+router.route('/outfits/:id/edit')
   .get(outfits.editOutfit);
+
+router.route('/outfits/:id/favourite')
+  .post(users.addToFavourites);
 
 router.route('/register')
   .get(registrations.new)

@@ -100,6 +100,8 @@ function deleteOutfit(req, res, next) {
     .catch(next);
 }
 
+
+
 module.exports = {
   outfitIndex,
   newOutfit,
