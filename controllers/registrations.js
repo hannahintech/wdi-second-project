@@ -6,7 +6,7 @@ function newRoute(req, res) {
 }
 
 // Register a user
-function createRoute(req, res){
+function createRoute(req, res, next){
   console.log(req.body);
   User
     .create(req.body)
@@ -16,9 +16,9 @@ function createRoute(req, res){
     })
     .catch((err) => {
       if(err.name === 'ValidationError') {
-        return res.status(400).render('registrations/new', { message: 'Passwords do not match 🤦🏻‍'});
+        return res.status(400).render('registrations/new', { message: 'Passwords do not match'});
       }
-      res.status(500).end();
+      next(err);
     });
 }
 

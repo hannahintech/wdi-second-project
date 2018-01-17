@@ -4,7 +4,7 @@ function newRoute(req, res) {
   res.render('sessions/new');
 }
 
-function createRoute(req, res) {
+function createRoute(req, res, next) {
   console.log(req.body);
   User
     .findOne({ email: req.body.email})
@@ -17,10 +17,7 @@ function createRoute(req, res) {
       req.flash('info', `Welcome, ${user.username}!`);
       res.redirect('/outfits');
     })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).end();
-    });
+    .catch(next);
 }
 
 function deleteRoute(req, res) {
