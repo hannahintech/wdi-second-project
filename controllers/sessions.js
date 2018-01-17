@@ -15,7 +15,7 @@ function createRoute(req, res) {
       }
       req.session.userId = user.id;
       req.flash('info', `Welcome, ${user.username}!`);
-      res.redirect('/index');
+      res.redirect('/items');
     })
     .catch((err) => {
       console.log(err);

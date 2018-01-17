@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Outfits</h1>
+</div>
+<ul class="container">
+  <div class="row">
+    <% outfits.forEach((outfit) => { %>
+    <div class="outfit-list">
+      <p class="outfit-name"><%= outfit.name %></p>
+      <a href="/outfits/<%= outfit.id %>">
+      <% outfit.items.forEach((itemImage) => { %>
+        <div class="outfit-image-div">
+          <img src="<%= itemImage.image %>">
+        </div>
+      <% }); %>
+      </a>
+    </div>
+    <% }); %>
+  </div>
+</ul>

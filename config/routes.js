@@ -12,29 +12,44 @@ router.route('/')
   .get(statics.index);
 
 // nb path for url is not the same as ejs file name, can I have duplicate url paths? (with separate statics?)
-router.route('/index')
-  .get(items.allItems);
+router.route('/items')
+  .get(items.itemsIndex);
 // .get(items.generateOutfit);
 
-// router.route('/generate-outfit')
-//   .get(outfits.allItemsToOutfit);
+router.route('/all-my-items')
+  .get(items.allMyItems);
 
-
-router.route('/add-item')
+router.route('/items/new')
   .get(items.newItem);
 
 router.route('/items')
-  .post(items.addItem);
+  .post(items.createItem);
 
-router.route('/index/:id')
+router.route('/items/:id')
   .get(items.showItem)
-  .put(items.updateItem);
-// .delete(items.deleteItem);
+  .put(items.updateItem)
+  .delete(items.deleteItem);
 
-router.route('/index/:id/edit')
+router.route('/items/:id/edit')
   .get(items.editItem);
 
-// registration related
+router.route('/outfits')
+  .get(outfits.outfitIndex);
+
+router.route('/outfits')
+  .post(outfits.createOutfit);
+
+router.route('/outfits/new')
+  .get(outfits.newOutfit);
+
+router.route('/outfits/:id')
+  .get(outfits.showOutfit)
+  .put(outfits.updateOutfit)
+  .delete(outfits.deleteOutfit);
+
+router.route('/outfit/:id/edit')
+  .get(outfits.editOutfit);
+
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);

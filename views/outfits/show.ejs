@@ -1,27 +1,24 @@
+<h1>show single outfit</h1>
+
+
 <%# remember to edit %>
 <div "container">
   <div class="row centered-content">
     <img class="show-page-image" src="<%= item.image %>" alt="<%= item.name %>">
   </div>
   <div class="row centered-content">
-    <h4><%= item.category %></h2>
+    <h4><%= outfit.name %></h2>
   </div>
   <div class="row centered-content">
     <% if(item.createdBy) { %>
-      <h3>Added by: <%= item.createdBy.username %></h3>
+      <h3>Added by: <%= outfit.createdBy.username %></h3>
     <% } %>
   </div>
   <div class="row centered-content">
-    <p>Colours: <%= item.colour %><p>
+    <p>Use in <%= outfit.weather[0] %> or <%= outfit.weather[1] %> weather</p>
   </div>
   <div class="row centered-content">
-    <p>Use in <%= item.weather[0] %> or <%= item.weather[1] %> weather</p>
-  </div>
-  <div class="row centered-content">
-    <p>Pattern: <%= item.pattern %></p>
-  </div>
-  <div class="row centered-content">
-    <% if (item.specialOccassion) { %>
+    <% if (outfit.specialOccassion) { %>
       <p> This is something you'd wear for a special occassion! <p>
     <% } else { %>
       <p> This is not something you'd wear for a special occassion <p>
@@ -35,14 +32,14 @@
     <p>add to collection - to come!</p>
   </div>
 
-  <% if(item.createdBy || locals.user === 'hannah') { %>
+  <% if(show.createdBy || locals.user === 'hannah') { %>
     <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
 
     <div class="row centered-content">
-      <a class="btn btn-outline-success btn-lg" href="/index/<%= item.id %>/edit">Edit</a>
+      <a class="btn btn-outline-success btn-lg" href="/outfits/<%= item.id %>/edit">Edit</a>
     </div>
     <div class="row centered-content">
-      <form method="POST" action="/index/<%= item.id %>">
+      <form method="POST" action="/outfits/<%= item.id %>">
         <input type="hidden" name="_method" value="DELETE">
         <button class="btn btn-outline-danger btn-lg">Delete</button>
       </form>

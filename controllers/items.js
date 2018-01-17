@@ -1,6 +1,6 @@
 const Item = require('../models/item');
 
-function newItemRoute(req, res) {
+function newItem(req, res) {
   return res.render('items/new');
 }
 
@@ -12,7 +12,15 @@ function itemsIndex(req, res) {
     .then((items) => res.render('items/index', { items }));
 }
 
-function createItemRoute(req, res){
+function myItemsIndex(req, res) {
+  Item
+    .find()
+    .populate('createdBy item.createdBy')
+    .exec()
+    .then((items) => res.render('items/all-my-items', { items }));
+}
+
+function createItem(req, res){
   console.log(req.body);
   req.body.createdBy = req.user;
 
@@ -20,14 +28,14 @@ function createItemRoute(req, res){
     .create(req.body)
     .then(() => {
       console.log(req.body);
-      res.redirect('index');
+      res.redirect('/items');
     })
     .catch((err) => {
       console.log(err);
     });
 }
 
-function showItemRoute(req, res) {
+function showItem(req, res) {
   Item
     .findById(req.params.id)
     .populate('createdBy')
@@ -41,7 +49,7 @@ function showItemRoute(req, res) {
     });
 }
 
-function editItemRoute(req, res) {
+function editItem(req, res) {
   Item
     .findById(req.params.id)
     .exec()
@@ -54,7 +62,7 @@ function editItemRoute(req, res) {
     });
 }
 
-function updateItemRoute(req, res) {
+function updateItem(req, res) {
   Item
     .findById(req.params.id)
     .exec()
@@ -65,65 +73,34 @@ function updateItemRoute(req, res) {
 
       return item.save();
     })
-    .then(() => res.redirect('/index'))
+    .then(() => res.redirect('/items'))
     .catch((err) => {
       if(err.name === 'ValidationError') {
         // flash message here!
-        return res.badRequest(`/index/${req.params.id}/edit`, err.toString());
+        return res.badRequest(`/items/${req.params.id}/edit`, err.toString());
       }
     });
 }
 
-// function deleteItemRoute(req, res, next) {
-//   Item
-//     .findById(req.params.id)
-//     .exec()
-//     .then((item) => {
-//       if(!item) return res.notFound();
-//       return item.remove();
-//     })
-//     .then(() => res.redirect('/index'))
-//     .catch(next);
-// }
+function deleteItem(req, res, next) {
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then((item) => {
+      if(!item) return res.notFound();
+      return item.remove();
+    })
+    .then(() => res.redirect('/items'))
+    .catch(next);
+}
 
 module.exports = {
-  newItem: newItemRoute,
-  addItem: createItemRoute,
-  allItems: itemsIndex,
-  showItem: showItemRoute,
-  editItem: editItemRoute,
-  updateItem: updateItemRoute
-  // deleteItem: deleteItemRoute
-  // generateOutfit
+  newItem,
+  createItem,
+  itemsIndex,
+  allMyItems: myItemsIndex,
+  showItem,
+  editItem,
+  updateItem,
+  deleteItem
 };
-
-
-// generate outfit
-// find items based on category (ie hat)
-// will see an array of items (hats)
-// pick one (hat)
-// randomly choose a hat
-// store that hat as an element of a new array 'itemGroup'
-// repeat 8 times
-// then you have a complete "itemGroup"
-// which can then be displayed using ejs
-// explore mongoose methods
-// function generateOutfit(req, res) {
-//   Item
-//     .find()
-//     .then((items) => {
-//       console.log(items);
-//       items.forEach((item) => {
-//         getOutfit();
-//       });
-//       res.render('outfits/index', outfit);
-//     });
-//
-// const getOutfit = function(item) {
-//     for((i=0, i<item.length, i++) {
-//       let itemCategory = item.find({ category: i })
-//       let outfit =+ [itemCategory]
-//     });
-//     return outfit
-//   })
-// }

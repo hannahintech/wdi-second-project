@@ -4,6 +4,12 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
+.jumbotron-home {
+  // background-image: url('../assets/jumbo.jpg');
+  // background-size: cover;
+  // background-position: center;
+}
+
 .logged-in-nav {
     font-size: 25px;
     // margin-left: auto;
@@ -39,6 +45,22 @@ div {
     padding-top: 10px;
     padding-bottom: 20px;
   }
+  &.outfit-image-div {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &.outfit-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+  }
 }
 
 img {
@@ -54,11 +76,12 @@ img {
     padding-bottom: 30px;
   }
 }
-// img {
-//   &.outfit-image {
-//     max-
-//   }
-// }
+
+p {
+  &.outfit-name {
+    font-size: 25px;
+  }
+}
 
 // .form-colours {
 //   background-color: #e3dac9;
@@ -94,4 +117,16 @@ img {
 
 #colour8 {
   color: #d02090;
+}
+
+.form-item {
+  input[type="checkbox"] {
+    display: none;
+    &:checked + label {
+      border-color: tomato;
+    }
+  }
+  label {
+    border: 2px solid transparent;
+  }
 }
