@@ -1,12 +1,10 @@
-const express  = require('express');
-const router   = express.Router();
+const router = require('express').Router();
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const statics = require('../controllers/statics');
 const outfits = require('../controllers/outfits');
 const items = require('../controllers/items');
 // const secureRoute = require('../lib/secureRoute');
-
 
 router.route('/')
   .get(statics.index);
