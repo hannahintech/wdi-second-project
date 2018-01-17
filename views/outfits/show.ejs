@@ -1,16 +1,18 @@
-<h1>show single outfit</h1>
-
-
-<%# remember to edit %>
 <div "container">
-  <div class="row centered-content">
-    <img class="show-page-image" src="<%= item.image %>" alt="<%= item.name %>">
-  </div>
   <div class="row centered-content">
     <h4><%= outfit.name %></h2>
   </div>
   <div class="row centered-content">
-    <% if(item.createdBy) { %>
+    <a href="/outfits/<%= outfit.id %>">
+    <% outfit.items.forEach((itemImage) => { %>
+      <div class="outfit-image-div">
+        <img src="<%= itemImage.image %>">
+      </div>
+    <% }); %>
+    </a>
+  </div>
+  <div class="row centered-content">
+    <% if(outfit.createdBy) { %>
       <h3>Added by: <%= outfit.createdBy.username %></h3>
     <% } %>
   </div>
@@ -32,14 +34,14 @@
     <p>add to collection - to come!</p>
   </div>
 
-  <% if(show.createdBy || locals.user === 'hannah') { %>
-    <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
+  <% if(outfit.createdBy || locals.user === 'hannah') { %>
+    <% if(locals.isLoggedIn && outfit.belongsTo(user)) {%>
 
     <div class="row centered-content">
-      <a class="btn btn-outline-success btn-lg" href="/outfits/<%= item.id %>/edit">Edit</a>
+      <a class="btn btn-outline-success btn-lg" href="/outfits/<%= outfit.id %>/edit">Edit</a>
     </div>
     <div class="row centered-content">
-      <form method="POST" action="/outfits/<%= item.id %>">
+      <form method="POST" action="/outfits/<%= outfit.id %>">
         <input type="hidden" name="_method" value="DELETE">
         <button class="btn btn-outline-danger btn-lg">Delete</button>
       </form>

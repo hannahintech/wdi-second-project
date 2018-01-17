@@ -39,10 +39,10 @@
     <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
 
     <div class="row centered-content">
-      <a class="btn btn-outline-success btn-lg" href="/index/<%= item.id %>/edit">Edit</a>
+      <a class="btn btn-outline-success btn-lg" href="/items/<%= item.id %>/edit">Edit</a>
     </div>
     <div class="row centered-content">
-      <form method="POST" action="/index/<%= item.id %>">
+      <form method="POST" action="/items/<%= item.id %>">
         <input type="hidden" name="_method" value="DELETE">
         <button class="btn btn-outline-danger btn-lg">Delete</button>
       </form>

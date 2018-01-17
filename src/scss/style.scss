@@ -38,8 +38,12 @@ li {
 }
 
 div {
-  &.test {
-    background-color: grey;
+  &.index-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    height: auto;
   }
   &.form-check {
     padding-top: 10px;
@@ -60,6 +64,15 @@ div {
     align-items: center;
     width: 300px;
     padding: 20px;
+  }
+  &.item-image-div {
+    display: flex;
+    justify-content: center;
+    width: 130px;
+    height: auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 

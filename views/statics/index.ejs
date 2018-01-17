@@ -1,19 +1,21 @@
 
-<div>
-  <div class="container">
+<div class="container index-page">
+  <% if (locals.isLoggedIn) { %>
+  <div class="container last-container">
     <div class="row centered-content">
-      <a href="/outfits/new" class="btn btn-outline-success btn-lg">Generate Outfit</a>
+      <a href="/outfits/new" class="btn btn-outline-success btn-lg btn-block">Create an Outfit</a>
     </div>
   </div>
-  <div class="container">
+  <% } %>
+  <div class="container last-container">
     <div class="row centered-content">
-        <a href="/outfits" class="btn btn-outline-primary btn-lg">View posted outfits</a>
+        <a href="/outfits" class="btn btn-outline-primary btn-lg btn-block">Browse outfits</a>
     </div>
   </div>
   <% if (!locals.isLoggedIn) { %>
-  <div class="container">
+  <div class="container last-container">
     <div class="row centered-content">
-      <a href="/register" class="btn btn-outline-danger btn-lg">Sign up to save your own!</a>
+      <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up to create your own!</a>
     </div>
   </div>
   <% } %>

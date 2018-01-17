@@ -9,6 +9,10 @@ const outfitSchema = new mongoose.Schema({
   items: [{ type: mongoose.Schema.ObjectId, ref: 'Item', required: true }]
 });
 
+outfitSchema.methods.belongsTo = function outfitBelongsTo(user) {
+  return this.createdBy.id === user.id;
+};
+
 module.exports = mongoose.model('Outfit', outfitSchema);
 
 // <p><%= outfit.items[] %></p>

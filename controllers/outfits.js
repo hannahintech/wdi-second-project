@@ -30,7 +30,7 @@ function createOutfit(req, res){
   Outfit
     .create(req.body)
     .then(() => {
-      res.redirect('/items');
+      res.redirect('/outfits');
     })
     .catch((err) => {
       console.log(err);
@@ -41,7 +41,7 @@ function showOutfit(req, res) {
 
   Outfit
     .findById(req.params.id)
-    .populate('createdBy')
+    .populate('createdBy items items.createdBy')
     .exec()
     .then((outfit) => {
       if(!outfit) return res.notFound();
