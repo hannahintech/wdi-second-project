@@ -11,12 +11,14 @@ function outfitIndex(req, res) {
     });
 }
 
+
+// FIX THIS
 function myOutfitsIndex(req, res) {
   Outfit
     .find()
-    .populate('createdBy outfit.createdBy')
+    .populate('createdBy items items.createdBy')
     .exec()
-    .then((outfits) => res.render('outfits/my-outfits', { outfits }));
+    .then((outfit) => res.render('outfits/my-outfits', { outfit }));
 }
 
 function newOutfit(req, res) {

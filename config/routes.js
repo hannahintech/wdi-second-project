@@ -36,7 +36,7 @@ router.route('/outfits')
   .get(outfits.outfitIndex);
 
 router.route('/my-outfits')
-  .get(items.myOutfits);
+  .get(outfits.myOutfits);
 
 router.route('/outfits')
   .post(outfits.createOutfit);

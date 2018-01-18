@@ -43,6 +43,22 @@ h4 {
 
 a {
     color: #D439E1;
+  &.dropdown-item {
+    color: #D439E1;
+  }
+}
+
+a:hover {
+    color: #4CC9AC;
+    text-decoration: underline;
+}
+
+.dropdown-menu {
+  border: 1px solid rgba(76, 201, 172, .35);
+}
+
+.dropdown-item:hover {
+  color: #4CC9AC;
 }
 
 .fa-user-circle-o {
@@ -108,7 +124,7 @@ button.btn.btn-primary.btn-block {
 
 ul {
   &.header-nav {
-    font-size: 25px;
+    font-size: 15px;
     justify-content: flex-end;
   }
 }
@@ -161,6 +177,12 @@ div {
     justify-content: center;
     width: 130px;
     min-height: 100px;
+    padding: 10px;
+    border-color: #d439e1;
+    border: 1px;
+    border-style: solid;
+    margin: 20px;
+    border-radius: 10px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

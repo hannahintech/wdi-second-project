@@ -1,52 +1,43 @@
 <div class="container">
-    <div class="row justify-content-center">
+  <div class="row justify-content-center">
+    <div class="col">
+      <% outfit.items.forEach((itemImage) => { %>
+        <div class="outfit-image-div outfit-list">
+          <img src="<%= itemImage.image %>">
+        </div>
+      <% }); %>
+    </div>
+    <div class="col">
+      <h3><%= outfit.name %></h2>
+      <% if(outfit.createdBy) { %>
+        <h4>added by <%= outfit.createdBy.username %></h4>
+      <% } %>
+      <h4>use in <%= outfit.weather[0] %> or <%= outfit.weather[1] %> weather</h4>
+      <% if (outfit.specialOccassion) { %>
+        <h4> special occassion item! <h4>
+      <% } %>
+      <div>
+      <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === -1 ) {%>
+        <form method="POST" action="/outfits/<%= outfit.id %>/favourite">
+              <button name="id" type="submit" class="btn btn-success btn-lg show-page-button">favourite</button>
+        </form>
+      <% } %>
+      <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === 0 ) {%>
+        <form method="POST" action="/outfits/<%= outfit.id %>/unfavourite">
+              <button name="id" type="submit" class="btn btn-success btn-lg show-page-button"><i class="fa fa-star" aria-hidden="true"></i></button>
+        </form>
+      <% } %>
+      <% if(outfit.createdBy || user.username === 'hannah') { %>
+        <% if(locals.isLoggedIn && outfit.belongsTo(user)) {%>
+              <a class="btn btn-outline-success btn-lg show-page-button" href="/outfits/<%= outfit.id %>/edit">edit</a>
 
-      <div class="col">
-        <h3><%= outfit.name %></h2>
-          <% if(outfit.createdBy) { %>
-            <h4>added by <%= outfit.createdBy.username %></h4>
-          <% } %>
-
-          <h4>use in <%= outfit.weather[0] %> or <%= outfit.weather[1] %> weather</h4>
-
-          <% if (outfit.specialOccassion) { %>
-            <h4> special occassion item! <h4>
-          <% } %>
-      </div>
-
-      <div class="col">
-        <% outfit.items.forEach((itemImage) => { %>
-          <div class="outfit-image-div outfit-list">
-            <img src="<%= itemImage.image %>">
-          </div>
-        <% }); %>
-      </div>
-
-      <div class="col align-self-end">
-
-        <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === -1 ) {%>
-          <form method="POST" action="/outfits/<%= outfit.id %>/favourite">
-                <button name="id" type="submit" class="btn btn-success btn-lg show-page-button">favourite</button>
-          </form>
+              <form method="POST" action="/outfits/<%= outfit.id %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="btn btn-outline-danger btn-lg show-page-button">delete</button>
+              </form>
         <% } %>
-
-        <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === 0 ) {%>
-          <form method="POST" action="/outfits/<%= outfit.id %>/unfavourite">
-                <button name="id" type="submit" class="btn btn-success btn-lg show-page-button"><i class="fa fa-star" aria-hidden="true"></i></button>
-          </form>
-        <% } %>
-
-        <% if(outfit.createdBy || user.username === 'hannah') { %>
-          <% if(locals.isLoggedIn && outfit.belongsTo(user)) {%>
-                <a class="btn btn-outline-success btn-lg show-page-button" href="/outfits/<%= outfit.id %>/edit">edit</a>
-
-                <form method="POST" action="/outfits/<%= outfit.id %>">
-                  <input type="hidden" name="_method" value="DELETE">
-                  <button class="btn btn-outline-danger btn-lg show-page-button">delete</button>
-                </form>
-          <% } %>
-        <% } %>
-
+      <% } %>
       </div>
     </div>
+  </div>
 </div>

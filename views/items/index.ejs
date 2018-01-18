@@ -1,15 +1,12 @@
-<div class="container">
-  <h1>all added items</h1>
-</div>
-  <ul class="container">
-    <div class="row">
-      <% items.forEach((item) => { %>
-        <li class"col-lg-2">
-        <a href="/items/<%= item.id %>">
-        <div class="item-image-div" style="background-image: url('<%= item.image %>')">
-        </div>
-        </a>
-        </li>
-      <% }) %>
-    </div>
-  </ul>
+<ul class="container">
+  <div class="row">
+    <% items.forEach((item) => { %>
+      <li class"col">
+      <a href="/items/<%= item.id %>">
+      <div class="item-image-div" style="background-image: url('<%= item.image %>')">
+      </div>
+      </a>
+      </li>
+    <% }) %>
+  </div>
+</ul>

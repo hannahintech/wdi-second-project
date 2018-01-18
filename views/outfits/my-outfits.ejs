@@ -4,18 +4,16 @@
   </div>
   <ul class="container">
     <div class="row">
-      <% items.forEach((item) => { %>
+    <% outfit.items.forEach((itemImage) => { %>
         <% if(outfit.createdBy && outfit.createdBy.username === locals.user.username) { %>
-        <li class"col-lg-2">
-        <a href="/index/<%= item.id %>">
-
-          <img class="outfit-image" src="<%= item.image %>">
-
-        </a>
-        </li>
+          <div class="outfit-image-div outfit-list">
+            <img src="<%= itemImage.image %>">
+          </div>
         <% } %>
-
       <% }) %>
   </div>
   </ul>
 <% }; %>
+
+
+<%# FIX THIS %>
