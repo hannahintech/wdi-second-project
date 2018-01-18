@@ -17,7 +17,7 @@ function myItemsIndex(req, res) {
     .find()
     .populate('createdBy item.createdBy')
     .exec()
-    .then((items) => res.render('items/all-my-items', { items }));
+    .then((items) => res.render('items/my-items', { items }));
 }
 
 function createItem(req, res){
@@ -93,10 +93,10 @@ function deleteItem(req, res, next) {
 }
 
 module.exports = {
+  myItems: myItemsIndex,
   newItem,
   createItem,
   itemsIndex,
-  allMyItems: myItemsIndex,
   showItem,
   editItem,
   updateItem,

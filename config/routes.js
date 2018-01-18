@@ -15,8 +15,8 @@ router.route('/items')
   .get(items.itemsIndex);
 // .get(items.generateOutfit);
 
-router.route('/all-my-items')
-  .get(items.allMyItems);
+router.route('/my-items')
+  .get(items.myItems);
 
 router.route('/items/new')
   .get(items.newItem);
@@ -34,6 +34,9 @@ router.route('/items/:id/edit')
 
 router.route('/outfits')
   .get(outfits.outfitIndex);
+
+router.route('/my-outfits')
+  .get(items.myOutfits);
 
 router.route('/outfits')
   .post(outfits.createOutfit);

@@ -1,0 +1,21 @@
+<% if (locals.isLoggedIn) { %>
+  <div class="container">
+    <h1>all <%= `${locals.user.username}'s` %> added outfits </h1>
+  </div>
+  <ul class="container">
+    <div class="row">
+      <% items.forEach((item) => { %>
+        <% if(outfit.createdBy && outfit.createdBy.username === locals.user.username) { %>
+        <li class"col-lg-2">
+        <a href="/index/<%= item.id %>">
+
+          <img class="outfit-image" src="<%= item.image %>">
+
+        </a>
+        </li>
+        <% } %>
+
+      <% }) %>
+  </div>
+  </ul>
+<% }; %>

@@ -11,6 +11,13 @@ function outfitIndex(req, res) {
     });
 }
 
+function myOutfitsIndex(req, res) {
+  Outfit
+    .find()
+    .populate('createdBy outfit.createdBy')
+    .exec()
+    .then((outfits) => res.render('outfits/my-outfits', { outfits }));
+}
 
 function newOutfit(req, res) {
   Item
@@ -102,6 +109,7 @@ function deleteOutfit(req, res, next) {
 
 
 module.exports = {
+  myOutfits: myOutfitsIndex,
   outfitIndex,
   newOutfit,
   createOutfit,
