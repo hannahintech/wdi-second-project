@@ -8,43 +8,36 @@
   </div>
   <div class="row centered-content">
     <% if(item.createdBy) { %>
-      <h3>Added by: <%= item.createdBy.username %></h3>
+      <h3>added by: <%= item.createdBy.username %></h3>
     <% } %>
   </div>
   <div class="row centered-content">
-    <p>Colours: <%= item.colour %><p>
+    <p>colours: <%= item.colour %><p>
   </div>
   <div class="row centered-content">
-    <p>Use in <%= item.weather[0] %> or <%= item.weather[1] %> weather</p>
+    <p>use in <%= item.weather[0] %> or <%= item.weather[1] %> weather</p>
   </div>
   <div class="row centered-content">
-    <p>Pattern: <%= item.pattern %></p>
+    <p>pattern: <%= item.pattern %></p>
   </div>
   <div class="row centered-content">
     <% if (item.specialOccassion) { %>
-      <p> This is something you'd wear for a special occassion! <p>
-    <% } else { %>
-      <p> This is not something you'd wear for a special occassion <p>
+      <p> special occassion outfit! <p>
     <% } %>
     </p>
   </div>
 </div>
 
-<div class="container last-container">
-  <div class="row centered-content">
-    <p>add to collection - to come!</p>
-  </div>
-
   <% if(item.createdBy || locals.user === 'hannah') { %>
     <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
 
     <div class="row centered-content">
-      <a class="btn btn-outline-success btn-lg" href="/items/<%= item.id %>/edit">Edit</a>
+      <a class="btn btn-outline-success btn-lg" href="/items/<%= item.id %>/edit">edit</a>
     </div>
     <div class="row centered-content">
       <form method="POST" action="/items/<%= item.id %>">
         <input type="hidden" name="_method" value="DELETE">
-        <button class="btn btn-outline-danger btn-lg">Delete</button>
+        <button class="btn btn-outline-danger btn-lg">delete</button>
       </form>
     </div>
     <% } %>

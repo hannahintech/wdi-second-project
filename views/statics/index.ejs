@@ -1,19 +1,27 @@
 
 <div class="container index-page">
-  <div class="container last-container centered-content">
-        <a href="/outfits" class="btn btn-outline-success btn-lg btn-block">Browse outfits</a>
-  </div>
-  <% if (locals.isLoggedIn) { %>
-  <div class="container last-container centered-content">
-      <a href="/outfits/new" class="btn btn-outline-primary btn-lg btn-block">Create an Outfit</a>
-  </div>
-  <% } %>
-  <% if (!locals.isLoggedIn) { %>
-    <div class="container last-container centered-content">
-          <a href="/login" class="btn btn-outline-primary btn-lg btn-block">Log in</a>
+
+  <div class="row">
+    <div class="col">
+      <div class="container last-container centered-content">
+            <a href="/outfits" class="btn btn-outline-success btn-lg btn-block">Browse outfits</a>
+      </div>
+      <% if (locals.isLoggedIn) { %>
+      <div class="container last-container centered-content">
+          <a href="/outfits/new" class="btn btn-outline-primary btn-lg btn-block">Create an Outfit</a>
+      </div>
+      <% } %>
+      <% if (!locals.isLoggedIn) { %>
+        <div class="container last-container centered-content">
+              <a href="/login" class="btn btn-outline-primary btn-lg btn-block">Log in</a>
+        </div>
+        <div class="container last-container centered-content">
+            <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up to create your own!</a>
+        </div>
+      <% } %>
     </div>
-    <div class="container last-container centered-content">
-        <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up to create your own!</a>
-    </div>
-  <% } %>
+  </div>
+
+
+
 </div>

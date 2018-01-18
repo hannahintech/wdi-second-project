@@ -1,9 +1,9 @@
   <div class="container">
-    <h2>Edit Item</h2>
+    <h2>edit Item</h2>
     <form method="POST" action="/items/<%= item.id %>">
       <input type="hidden" name="_method" value="PUT">
       <div class="form-group">
-        <label for="category">Type of Item</label>
+        <label for="category">type of item</label>
         <select name="category" class="form-control" id="category" value="<%= item.category %>">
           <option id="category1">hat</option>
           <option id="category2">scarf or shawl</option>
@@ -16,7 +16,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="colour">Colour</label>
+        <label for="colour">colour</label>
         <select multiple class="form-control form-colours" name="colour" id="colour" value="<%= item.colour %>">
           <option id="colour1">red</option>
           <option id="colour2">orange</option>
@@ -31,7 +31,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="pattern">Pattern</label>
+        <label for="pattern">pattern</label>
         <select class="form-control" id="pattern" name="pattern" value="<%= item.pattern %>">
           <option>plain</option>
           <option>striped</option>
@@ -45,7 +45,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="weather">Weather</label>
+        <label for="weather">weather</label>
         <select multiple name="weather" class="form-control" id="weather" value="<%= item.weather %>">
           <option>hot</option>
           <option>warm</option>
@@ -54,7 +54,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="image">URL</label>
+        <label for="image">url/web address</label>
         <input type="text" class="form-control" placeholder="url address" name="image" value="<%= item.image %>">
       </div>
       <div class="form-check">
@@ -62,7 +62,7 @@
         <label class="form-check-label" for="specialOccassion" name="specialOccassion" value="<%= item.specialOccassion %>">special occasion item!</label>
       </div>
       <div class="sumbit-item">
-        <button class="btn btn-outline-success">Update Item</button>
+        <button class="btn btn-outline-success">update item</button>
       </div>
     </form>
   </div>

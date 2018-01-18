@@ -1,4 +1,4 @@
-<div "container">
+<div "container centered-content">
   <div class="row centered-content">
     <h4><%= outfit.name %></h2>
   </div>
@@ -13,7 +13,7 @@
   </div>
   <div class="row centered-content">
     <% if(outfit.createdBy) { %>
-      <h3>Added by: <%= outfit.createdBy.username %></h3>
+      <h3>added by: <%= outfit.createdBy.username %></h3>
     <% } %>
   </div>
   <div class="row centered-content">
@@ -21,45 +21,37 @@
   </div>
   <div class="row centered-content">
     <% if (outfit.specialOccassion) { %>
-      <p> This is something you'd wear for a special occassion! <p>
-    <% } else { %>
-      <p> This is not something you'd wear for a special occassion <p>
+      <p> special occassion item! <p>
     <% } %>
     </p>
   </div>
-</div>
-<%# Fix this! %>
-<% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === 0 ) {%>
-<div class="container last-container">
-  <div class="row centered-content">
-    <p>This is one of my favourite outfits</p>
-  </div>
-<% } %>
+
+  <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === 0 ) {%>
+    <div class="container last-container centered-content">
+        <p class="btn btn-info btn-lg btn-block">favourite outfit</p>
+    </div>
+  <% } %>
 
   <% if(outfit.createdBy || user.username === 'hannah') { %>
     <% if(locals.isLoggedIn && outfit.belongsTo(user)) {%>
-
-    <div class="row centered-content">
-      <a class="btn btn-outline-success btn-lg" href="/outfits/<%= outfit.id %>/edit">Edit</a>
-    </div>
-    <div class="row centered-content">
-      <form method="POST" action="/outfits/<%= outfit.id %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <button class="btn btn-outline-danger btn-lg">Delete</button>
-      </form>
-    </div>
+        <div class="container last-container centered-content">
+          <a class="btn btn-outline-success btn-lg" href="/outfits/<%= outfit.id %>/edit">edit</a>
+        </div>
+        <div class="container last-container centered-content">
+          <form method="POST" action="/outfits/<%= outfit.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-outline-danger btn-lg">delete</button>
+          </form>
+        </div>
     <% } %>
   <% } %>
-
+  <% if(locals.isLoggedIn) {%>
+  <div class="container last-container">
+    <form method="POST" action="/outfits/<%= outfit.id %>/favourite">
+        <div class="sumbit-item">
+          <button name="id" type="submit" class="btn btn-outline-success">Favourite</button>
+        </div>
+    </form>
+  </div>
+  <% } %>
 </div>
-<% if(locals.isLoggedIn) {%>
-<div class="container last-container">
-  <form method="POST" action="/outfits/<%= outfit.id %>/favourite">
-    <div class="container last-container">
-      <div class="sumbit-item">
-        <button name="id" type="submit" class="btn btn-outline-success">Favourite</button>
-      </div>
-    </div>
-  </form>
-</div>
-<% } %>

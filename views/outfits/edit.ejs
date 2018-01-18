@@ -4,9 +4,9 @@
   <form method="POST" action="/outfits/<%= outfit.id %>">
     <input type="hidden" name="_method" value="PUT">
     <div class="container last-container">
-      
+
       <div class="form-group">
-        <label for="name">Name your Outfit:</label>
+        <label for="name">name your outfit:</label>
         <input name="name" type="text" class="form-control" id="outfit-name" value="<%= outfit.name %>" required>
       </div>
 
@@ -25,7 +25,7 @@
       </ul>
 
       <div class="form-group">
-        <label for="weather">Weather</label>
+        <label for="weather">weather</label>
         <select multiple name="weather" class="form-control" id="weather" value="<%= outfit.weather %>">
           <option>hot</option>
           <option>warm</option>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="sumbit-item">
-        <button type="submit" class="btn btn-outline-success">Update</button>
+        <button type="submit" class="btn btn-outline-success">update</button>
       </div>
 
     </div>
