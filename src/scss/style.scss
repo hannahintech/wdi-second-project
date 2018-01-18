@@ -1,13 +1,22 @@
 // n.b. import scss partials here
 
 body {
-  font-family: 'Helvetica', sans-serif;
+  // font-family: 'Roboto Slab', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .jumbotron-home {
   background-image: url('../assets/jumbo.jpg');
   background-size: cover;
   background-position: center;
+}
+
+h1 {
+  &.display-4 {
+    font-size: 3.8rem;
+    color: #3644A5;
+    font-weight: 800;
+  }
 }
 
 .logged-in-nav {

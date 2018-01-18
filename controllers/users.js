@@ -22,6 +22,7 @@ function addToFavourites(req, res, next) {
     .catch(next);
 }
 
+// nb add logic so you can only favourite once
 
 module.exports = {
   addToFavourites

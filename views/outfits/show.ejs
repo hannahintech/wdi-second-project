@@ -28,8 +28,9 @@
     </p>
   </div>
 </div>
-<% if(locals.isLoggedIn) {%>
-  <% console.log(outfit); %>
+<%# Fix this! %>
+<% if(locals.isLoggedIn && user.favouriteOutfits) {%>
+  <% console.log(outfit._id); %>
 <div class="container last-container">
   <div class="row centered-content">
     <p>This is one of my favourite outfits</p>
