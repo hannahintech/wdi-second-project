@@ -7,7 +7,6 @@ function outfitIndex(req, res) {
     .populate('createdBy items items.createdBy')
     .exec()
     .then((outfits) => {
-      console.log(outfits);
       res.render('outfits/index', { outfits });
     });
 }
@@ -24,8 +23,6 @@ function newOutfit(req, res) {
 
 function createOutfit(req, res){
   req.body.createdBy = req.user;
-  console.log(req.body);
-  console.log(req.user);
 
   Outfit
     .create(req.body)

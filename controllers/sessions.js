@@ -5,7 +5,6 @@ function newRoute(req, res) {
 }
 
 function createRoute(req, res, next) {
-  console.log(req.body);
   User
     .findOne({ email: req.body.email})
     .exec()

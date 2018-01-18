@@ -1,22 +1,78 @@
 // n.b. import scss partials here
 
 body {
-  // font-family: 'Roboto Slab', serif;
   font-family: 'Poppins', sans-serif;
+  color: #D439E1;
 }
 
+.form-control {
+  color: #43C6AC;
+}
+
+// body background color=>  color: #D7FFFA;
+
+
 .jumbotron-home {
-  background-image: url('../assets/jumbo.jpg');
-  background-size: cover;
-  background-position: center;
+  background: #43C6AC;
+  // background: linear-gradient(to right, #F8FFAE, #43C6AC);
+  background: linear-gradient(to right, #D439E1, #43C6AC);
 }
 
 h1 {
   &.display-4 {
-    font-size: 3.8rem;
-    color: #3644A5;
+    font-size: 4.5rem;
+    color: #4CC9AC;
     font-weight: 800;
   }
+}
+
+p {
+  color: #4CC9AC;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+h2 {
+  &.lead {
+  color: #D439E1;
+  font-weight: 600;
+  }
+}
+
+a {
+    color: #D439E1;
+}
+
+button.btn.btn-primary.btn-block {
+  color: #fff;
+  background-color: #D439E1;
+  border-color: #D439E1;
+}
+
+.btn-outline-primary {
+  color: #D439E1;
+  border-color: #D439E1;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, .open>.dropdown-toggle.btn-outline-primary {
+  color: #fff;
+  background-color: #D439E1;
+  border-color: #D439E1;
+}
+
+.btn-outline-success {
+  color: #4CC9AC;
+  border-color: #4CC9AC;
+}
+
+.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active, .open>.dropdown-toggle.btn-outline-success {
+  color: #fff;
+  background-color: #4CC9AC;
+  border-color: #4CC9AC;
 }
 
 .logged-in-nav {

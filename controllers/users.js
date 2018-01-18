@@ -12,7 +12,12 @@ function addToFavourites(req, res, next) {
         .findById(req.params.id)
         .exec()
         .then((outfit) => {
-          user.favouriteOutfits.push(outfit.id);
+          if (user.favouriteOutfits.indexOf(outfit.id) === -1) {
+            user.favouriteOutfits.push(outfit.id);
+            req.flash('success', 'You have saved this item as a favourite!');
+          } else {
+            req.flash('danger', 'You already have this item saved as a favourite!');
+          }
         });
       return user.save();
     })
@@ -21,8 +26,6 @@ function addToFavourites(req, res, next) {
     })
     .catch(next);
 }
-
-// nb add logic so you can only favourite once
 
 module.exports = {
   addToFavourites

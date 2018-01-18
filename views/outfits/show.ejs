@@ -29,8 +29,7 @@
   </div>
 </div>
 <%# Fix this! %>
-<% if(locals.isLoggedIn && user.favouriteOutfits) {%>
-  <% console.log(outfit._id); %>
+<% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === 0 ) {%>
 <div class="container last-container">
   <div class="row centered-content">
     <p>This is one of my favourite outfits</p>

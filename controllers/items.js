@@ -21,13 +21,11 @@ function myItemsIndex(req, res) {
 }
 
 function createItem(req, res){
-  console.log(req.body);
   req.body.createdBy = req.user;
 
   Item
     .create(req.body)
     .then(() => {
-      console.log(req.body);
       res.redirect('/items');
     })
     .catch((err) => {

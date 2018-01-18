@@ -9,14 +9,19 @@
   <% } %>
   <div class="container last-container">
     <div class="row centered-content">
-        <a href="/outfits" class="btn btn-outline-primary btn-lg btn-block">Browse outfits</a>
+        <a href="/outfits" class="btn btn-outline-success btn-lg btn-block">Browse outfits</a>
     </div>
   </div>
   <% if (!locals.isLoggedIn) { %>
-  <div class="container last-container">
-    <div class="row centered-content">
-      <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up to create your own!</a>
+    <div class="container last-container">
+      <div class="row centered-content">
+          <a href="/login" class="btn btn-outline-primary btn-lg btn-block">Log in</a>
+      </div>
     </div>
-  </div>
+    <div class="container last-container">
+      <div class="row centered-content">
+        <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up to create your own!</a>
+      </div>
+    </div>
   <% } %>
 </div>
