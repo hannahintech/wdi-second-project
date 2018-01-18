@@ -1,46 +1,30 @@
 <%# remember to edit %>
 <div "container">
-  <div class="row centered-content">
-    <img class="show-page-image" src="<%= item.image %>" alt="<%= item.name %>">
-  </div>
-  <div class="row centered-content">
-    <h4><%= item.category %></h2>
-  </div>
-  <div class="row centered-content">
+  <div class="row justify-content-center">
+    <div class="col d-flex justify-content-around">
+      <div class="item-image-div show-page-image" style="background-image: url('<%= item.image %>')">
+      </div>
+    </div>
+    <div class="col">
+      <h3><%= item.category %></h3>
     <% if(item.createdBy) { %>
       <h3>added by: <%= item.createdBy.username %></h3>
     <% } %>
-  </div>
-  <div class="row centered-content">
-    <p>colours: <%= item.colour %><p>
-  </div>
-  <div class="row centered-content">
-    <p>use in <%= item.weather[0] %> or <%= item.weather[1] %> weather</p>
-  </div>
-  <div class="row centered-content">
-    <p>pattern: <%= item.pattern %></p>
-  </div>
-  <div class="row centered-content">
+      <h4>colours: <%= item.colour %></h4>
+      <h4>use in <%= item.weather[0] %> or <%= item.weather[1] %> weather</h4>
+      <h4>pattern: <%= item.pattern %></h4>
     <% if (item.specialOccassion) { %>
-      <p> special occassion outfit! <p>
+      <h4> special occassion outfit! </h4>
     <% } %>
-    </p>
+    <% if(item.createdBy || locals.user === 'hannah') { %>
+      <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
+        <a class="btn btn-outline-success btn-lg" href="/items/<%= item.id %>/edit">edit</a>
+        <form method="POST" action="/items/<%= item.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="btn btn-outline-danger btn-lg">delete</button>
+        </form>
+      <% } %>
+    <% } %>
+    </div>
   </div>
-</div>
-
-  <% if(item.createdBy || locals.user === 'hannah') { %>
-    <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
-
-    <div class="row centered-content">
-      <a class="btn btn-outline-success btn-lg" href="/items/<%= item.id %>/edit">edit</a>
-    </div>
-    <div class="row centered-content">
-      <form method="POST" action="/items/<%= item.id %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <button class="btn btn-outline-danger btn-lg">delete</button>
-      </form>
-    </div>
-    <% } %>
-  <% } %>
-
 </div>

@@ -71,7 +71,7 @@ function updateItem(req, res) {
 
       return item.save();
     })
-    .then(() => res.redirect('/items'))
+    .then(() => res.redirect(`/items/${req.params.id}`))
     .catch((err) => {
       if(err.name === 'ValidationError') {
         // flash message here!

@@ -1,19 +1,2 @@
-<% if (locals.isLoggedIn) { %>
-  <div class="container">
-    <h1>all <%= `${locals.user.username}'s` %> added outfits </h1>
-  </div>
-  <ul class="container">
-    <div class="row">
-    <% outfit.items.forEach((itemImage) => { %>
-        <% if(outfit.createdBy && outfit.createdBy.username === locals.user.username) { %>
-          <div class="outfit-image-div outfit-list">
-            <img src="<%= itemImage.image %>">
-          </div>
-        <% } %>
-      <% }) %>
-  </div>
-  </ul>
-<% }; %>
 
-
-<%# FIX THIS %>
+<h1>my outfits, coming soon!</h1>

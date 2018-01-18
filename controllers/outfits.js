@@ -16,7 +16,7 @@ function outfitIndex(req, res) {
 function myOutfitsIndex(req, res) {
   Outfit
     .find()
-    .populate('createdBy items items.createdBy')
+    .populate('createdBy items outfit.createdBy')
     .exec()
     .then((outfit) => res.render('outfits/my-outfits', { outfit }));
 }

@@ -187,14 +187,16 @@ div {
     background-position: center;
     background-repeat: no-repeat;
   }
+  &.show-page-image {
+    width: 250px;
+    min-height: 250px;
+  }
 }
 
+// ?obsolete
 img {
   max-height: 100px;
   width: auto;
-  &.show-page-image {
-    max-height: 250px;
-  }
 }
 
 .container {

@@ -19,7 +19,7 @@
       <div>
       <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === -1 ) {%>
         <form method="POST" action="/outfits/<%= outfit.id %>/favourite">
-              <button name="id" type="submit" class="btn btn-success btn-lg show-page-button">favourite</button>
+          <button name="id" type="submit" class="btn btn-success btn-lg show-page-button">favourite</button>
         </form>
       <% } %>
       <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === 0 ) {%>
