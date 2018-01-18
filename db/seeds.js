@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 const Item = require('../models/item');
+const Outfit = require('../models/outfit');
 // const User = require('../models/user'); // just for development
 
 const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/clothes-randomiser';
 mongoose.connect(dbURI);
+
+Outfit.collection.drop();
 
 Item
   .create([{

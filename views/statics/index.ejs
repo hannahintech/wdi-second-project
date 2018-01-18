@@ -1,17 +1,17 @@
 
 <div class="container index-page">
-  <% if (locals.isLoggedIn) { %>
-  <div class="container last-container">
-    <div class="row centered-content">
-      <a href="/outfits/new" class="btn btn-outline-success btn-lg btn-block">Create an Outfit</a>
-    </div>
-  </div>
-  <% } %>
   <div class="container last-container">
     <div class="row centered-content">
         <a href="/outfits" class="btn btn-outline-success btn-lg btn-block">Browse outfits</a>
     </div>
   </div>
+  <% if (locals.isLoggedIn) { %>
+  <div class="container last-container">
+    <div class="row centered-content">
+      <a href="/outfits/new" class="btn btn-outline-primary btn-lg btn-block">Create an Outfit</a>
+    </div>
+  </div>
+  <% } %>
   <% if (!locals.isLoggedIn) { %>
     <div class="container last-container">
       <div class="row centered-content">
