@@ -10,7 +10,7 @@ function createRoute(req, res, next){
   User
     .create(req.body)
     .then((user) => {
-      req.flash('info', `Thanks for registering, ${user.username}! Please login`);
+      req.flash('info', `Thanks for registering, ${user.username}! Please log in`);
       res.redirect('/login');
     })
     .catch((err) => {

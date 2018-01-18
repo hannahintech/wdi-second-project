@@ -18,10 +18,10 @@
     <% } %>
     <% if(item.createdBy || locals.user === 'hannah') { %>
       <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
-        <a class="btn btn-outline-success btn-lg" href="/items/<%= item.id %>/edit">edit</a>
+        <a class="btn btn-outline-success btn-lg show-page-button" href="/items/<%= item.id %>/edit">edit</a>
         <form method="POST" action="/items/<%= item.id %>">
           <input type="hidden" name="_method" value="DELETE">
-          <button class="btn btn-outline-danger btn-lg">delete</button>
+          <button class="btn btn-outline-danger btn-lg show-page-button">delete</button>
         </form>
       <% } %>
     <% } %>
