@@ -83,6 +83,12 @@ button.btn.btn-primary.btn-block {
   border-color: #4CC9AC;
 }
 
+.btn-success {
+  color: #fff;
+  background-color: #4CC9AC;
+  border-color: #4CC9AC;
+}
+
 .show-page-button {
   width: 200px;
   margin: 10px;
@@ -142,18 +148,19 @@ div {
     flex-direction: column;
     align-items: center;
     width: 300px;
-    padding: 20px;
+    padding: 5px;
     border-color: #d439e1;
     border: 1px;
     border-style: solid;
     margin: 20px;
     border-radius: 10px;
+    box-sizing: content-box;
   }
   &.item-image-div {
     display: flex;
     justify-content: center;
     width: 130px;
-    height: auto;
+    min-height: 100px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

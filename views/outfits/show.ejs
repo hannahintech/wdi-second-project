@@ -22,18 +22,7 @@
         <% }); %>
       </div>
 
-      <div class="col">
-
-        <% if(outfit.createdBy || user.username === 'hannah') { %>
-          <% if(locals.isLoggedIn && outfit.belongsTo(user)) {%>
-                <a class="btn btn-outline-success btn-lg show-page-button" href="/outfits/<%= outfit.id %>/edit">edit</a>
-
-                <form method="POST" action="/outfits/<%= outfit.id %>">
-                  <input type="hidden" name="_method" value="DELETE">
-                  <button class="btn btn-outline-danger btn-lg show-page-button">delete</button>
-                </form>
-          <% } %>
-        <% } %>
+      <div class="col align-self-end">
 
         <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === -1 ) {%>
           <form method="POST" action="/outfits/<%= outfit.id %>/favourite">
@@ -45,6 +34,17 @@
           <form method="POST" action="/outfits/<%= outfit.id %>/unfavourite">
                 <button name="id" type="submit" class="btn btn-success btn-lg show-page-button"><i class="fa fa-star" aria-hidden="true"></i></button>
           </form>
+        <% } %>
+
+        <% if(outfit.createdBy || user.username === 'hannah') { %>
+          <% if(locals.isLoggedIn && outfit.belongsTo(user)) {%>
+                <a class="btn btn-outline-success btn-lg show-page-button" href="/outfits/<%= outfit.id %>/edit">edit</a>
+
+                <form method="POST" action="/outfits/<%= outfit.id %>">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button class="btn btn-outline-danger btn-lg show-page-button">delete</button>
+                </form>
+          <% } %>
         <% } %>
 
       </div>

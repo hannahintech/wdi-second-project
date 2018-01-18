@@ -5,8 +5,7 @@
       <p class="outfit-name"><%= outfit.name %></p>
       <a href="/outfits/<%= outfit.id %>">
       <% outfit.items.forEach((itemImage) => { %>
-        <div class="outfit-image-div">
-          <img src="<%= itemImage.image %>">
+        <div class="outfit-image-div" style="background-image: url('<%= itemImage.image %>')">
         </div>
       <% }); %>
       </a>

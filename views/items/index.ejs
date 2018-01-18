@@ -6,8 +6,7 @@
       <% items.forEach((item) => { %>
         <li class"col-lg-2">
         <a href="/items/<%= item.id %>">
-        <div class="item-image-div">
-        <img src="<%= item.image %>">
+        <div class="item-image-div" style="background-image: url('<%= item.image %>')">
         </div>
         </a>
         </li>
