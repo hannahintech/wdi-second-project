@@ -53,6 +53,7 @@ function editOutfit(req, res) {
 
   Outfit
     .findById(req.params.id)
+    .populate('items')
     .exec()
     .then((outfit) => {
       if(!outfit) return res.notFound();
@@ -61,6 +62,7 @@ function editOutfit(req, res) {
     .catch((err) => {
       console.log(err);
     });
+
 }
 
 function updateOutfit(req, res) {

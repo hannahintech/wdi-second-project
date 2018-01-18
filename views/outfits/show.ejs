@@ -36,7 +36,7 @@
   </div>
 <% } %>
 
-  <% if(outfit.createdBy || locals.user === 'hannah') { %>
+  <% if(outfit.createdBy || user.username === 'hannah') { %>
     <% if(locals.isLoggedIn && outfit.belongsTo(user)) {%>
 
     <div class="row centered-content">

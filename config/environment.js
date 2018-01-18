@@ -4,3 +4,6 @@ const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/clothes-randomiser
 const secret = process.env.SESSION_SECRET || 'secret';
 
 module.exports = { port, env, dbURI, secret };
+
+
+// heroku pg:reset DATABASE_URL

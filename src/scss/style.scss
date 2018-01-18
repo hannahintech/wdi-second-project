@@ -5,12 +5,6 @@ body {
   color: #D439E1;
 }
 
-.form-control {
-  color: #43C6AC;
-}
-
-// body background color=>  color: #D7FFFA;
-
 
 .jumbotron-home {
   background: #43C6AC;
@@ -47,6 +41,12 @@ a {
     color: #D439E1;
 }
 
+.fa-user-circle-o {
+  font-size: 50px;
+  padding: 10px;
+}
+
+
 button.btn.btn-primary.btn-block {
   color: #fff;
   background-color: #D439E1;
@@ -76,8 +76,7 @@ button.btn.btn-primary.btn-block {
 }
 
 .logged-in-nav {
-    font-size: 25px;
-    // margin-left: auto;
+    font-size: 30px;
 }
 
 .dropdown-item {
@@ -90,6 +89,7 @@ button.btn.btn-primary.btn-block {
 
 ul {
   &.header-nav {
+    font-size: 25px;
     justify-content: flex-end;
   }
 }
@@ -129,6 +129,11 @@ div {
     align-items: center;
     width: 300px;
     padding: 20px;
+    border-color: #d439e1;
+    border: 1px;
+    border-style: solid;
+    margin: 20px;
+    border-radius: 10px;
   }
   &.item-image-div {
     display: flex;
@@ -159,6 +164,25 @@ p {
   &.outfit-name {
     font-size: 25px;
   }
+}
+
+.form-item {
+  input[type="checkbox"] {
+    display: none;
+    &:checked + label {
+      border-color: #d439e1;
+      border-radius: 10px;
+      margin: 20px;
+    }
+  }
+  label {
+    border: 2px solid transparent;
+    margin: 20px;
+  }
+}
+
+.form-control {
+  color: #43C6AC;
 }
 
 // .form-colours {
@@ -195,16 +219,4 @@ p {
 
 #colour8 {
   color: #d02090;
-}
-
-.form-item {
-  input[type="checkbox"] {
-    display: none;
-    &:checked + label {
-      border-color: tomato;
-    }
-  }
-  label {
-    border: 2px solid transparent;
-  }
 }

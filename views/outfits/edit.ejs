@@ -1,1 +1,49 @@
-<h1>edit item here</h1>
+<div class="container last-container">
+  <h2>edit outfit</h2>
+
+  <form method="POST" action="/outfits/<%= outfit.id %>">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="container last-container">
+      
+      <div class="form-group">
+        <label for="name">Name your Outfit:</label>
+        <input name="name" type="text" class="form-control" id="outfit-name" value="<%= outfit.name %>" required>
+      </div>
+
+      <ul class="container">
+        <div class="row">
+          <% outfit.items.forEach((item) => { %>
+            <li class"col-lg-2" class="form-item">
+              <input type="checkbox" name="items[]" value="<%= item.id %>" id="<%= item.id %>">
+              <label for="<%= item.id %>">
+                <div class="outfit-image-div" style="background-image:url('<%= item.image %>')">
+                </div>
+              </label>
+            </li>
+          <% }) %>
+        </div>
+      </ul>
+
+      <div class="form-group">
+        <label for="weather">Weather</label>
+        <select multiple name="weather" class="form-control" id="weather" value="<%= outfit.weather %>">
+          <option>hot</option>
+          <option>warm</option>
+          <option>mild</option>
+          <option>cold</option>
+        </select>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="special-occassion">
+        <label class="form-check-label" for="specialOccassion" name="specialOccassion" value="<%= outfit.specialOccassion %>">special occasion item!</label>
+      </div>
+
+      <div class="sumbit-item">
+        <button type="submit" class="btn btn-outline-success">Update</button>
+      </div>
+
+    </div>
+  </form>
+
+</div>
