@@ -13,13 +13,6 @@ Outfit.collection.drop();
 
 Item
   .create([{
-    category: '4',
-    colour: ['red', 'black', 'blue'],
-    pattern: 'floral',
-    weather: ['mild', 'warm'],
-    image: 'https://jigsaw.btxmedia.com/pws/client/images/catalogue/products/1014404/AS011/large/1014404_4.jpg',
-    specialOccassion: true
-  },{
     colour: [ 'red', 'black', 'blue' ],
     weather: [ 'mild', 'warm' ],
     category: '4',
@@ -101,7 +94,8 @@ Item
   },{
     colour: [ 'other' ],
     weather: [ 'mild', 'cold' ],
-    category: 'coat, thick jumper, or warm cardigan', pattern: 'plain',
+    category: '3',
+    pattern: 'plain',
     image: 'https://i.pinimg.com/736x/d7/f2/9e/d7f29e316b4bbd09d3f13476544d7a82--grey-suits-mens-suits.jpg'
   },{
     colour: [ 'whit' ],
