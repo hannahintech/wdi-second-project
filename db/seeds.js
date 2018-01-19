@@ -7,18 +7,18 @@ const Item = require('../models/item');
 const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/clothes-randomiser';
 mongoose.connect(dbURI);
 
-
+Item.collection.drop();
 
 Item
   .create([{
-    category: 'top',
+    category: '4',
     colour: ['red', 'black', 'blue'],
     pattern: 'floral',
     weather: ['mild', 'warm'],
     image: 'https://jigsaw.btxmedia.com/pws/client/images/catalogue/products/1014404/AS011/large/1014404_4.jpg',
     specialOccassion: true
   },{
-    category: 'trousers',
+    category: '5',
     colour: ['blue'],
     pattern: 'plain',
     weather: ['warm'],

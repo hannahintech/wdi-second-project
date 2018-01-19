@@ -22,6 +22,7 @@ function myItemsIndex(req, res) {
 
 function createItem(req, res){
   req.body.createdBy = req.user;
+  req.body.category = req.body.category.parseInt();
 
   Item
     .create(req.body)
@@ -48,6 +49,8 @@ function showItem(req, res) {
 }
 
 function editItem(req, res) {
+  req.body.category = req.body.category.parseInt();
+  // necessary? 
   Item
     .findById(req.params.id)
     .exec()
