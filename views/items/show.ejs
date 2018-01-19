@@ -6,12 +6,11 @@
       </div>
     </div>
     <div class="col">
-      <h3><%= item.category %></h3>
     <% if(item.createdBy) { %>
       <h3>added by: <%= item.createdBy.username %></h3>
     <% } %>
       <h4>colours: <%= item.colour %></h4>
-      <h4>use in <%= item.weather[0] %> or <%= item.weather[1] %> weather</h4>
+      <h4>use in <%= item.weather[0] %>  weather</h4>
       <h4>pattern: <%= item.pattern %></h4>
     <% if (item.specialOccassion) { %>
       <h4> special occassion outfit! </h4>
