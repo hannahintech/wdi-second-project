@@ -22,11 +22,10 @@ function myItemsIndex(req, res) {
 
 function createItem(req, res){
   req.body.createdBy = req.user;
-  req.body.category = req.body.category.parseInt();
+  req.body.category = parseInt(req.body.category);
 
   Item
     .create(req.body)
-    .sort(req.body.category)
     .then(() => {
       res.redirect('/items');
     })

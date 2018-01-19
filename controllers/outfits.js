@@ -32,7 +32,7 @@ function newOutfit(req, res) {
 
 function createOutfit(req, res){
   req.body.createdBy = req.user;
-
+  
   Outfit
     .create(req.body)
     .then(() => {
