@@ -2,15 +2,15 @@
 <div class="container index-page">
   <div class="row">
     <div class="col">
-      <a href="/items" class="btn btn-outline-success btn-lg btn-block">browse items</a>
-      <a href="/outfits" class="btn btn-outline-success btn-lg btn-block">browse outfits</a>
+      <a href="/items" class="btn btn-outline-success btn-lg btn-block homepage-button">browse items</a>
+      <a href="/outfits" class="btn btn-outline-success btn-lg btn-block homepage-button homepage-outfit-button">browse outfits</a>
     </div>
   </div>
   <div class="row">
     <div class="col">
     <% if (locals.isLoggedIn) { %>
-      <a href="/items/new" class="btn btn-outline-primary btn-lg btn-block">add an item</a>
-      <a href="/outfits/new" class="btn btn-outline-primary btn-lg btn-block">create an outfit</a>
+      <a href="/items/new" class="btn btn-outline-primary btn-lg btn-block homepage-button">add an item</a>
+      <a href="/outfits/new" class="btn btn-outline-primary btn-lg btn-block homepage-button">create an outfit</a>
     <% } %>
     <% if (!locals.isLoggedIn) { %>
       <a href="/login" class="btn btn-outline-primary btn-lg btn-block">Log in</a>

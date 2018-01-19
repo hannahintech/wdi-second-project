@@ -118,8 +118,31 @@ button.btn.btn-primary.btn-block {
     color: #B643A7;
     background-color: #3eae54;
     border-color: #3eae54;
-    // box-shadow: 0 0 0 0.2rem rgba(60,174,84,.75);
-    box-shadow: 0;
+    box-shadow: 0 0 0 0.2rem rgba(60,174,84,.5);
+}
+
+.homepage-button {
+  border-color: #4CC9AC;
+  border: 5px solid;
+  font-size: 30px;
+}
+
+.homepage-outfit-button {
+  color: #8982C6;
+}
+
+.homepage-outfit-button:hover, .homepage-outfit-button:focus, .homepage-outfit-button:active, .homepage-outfit-button.active, .open>.dropdown-toggle.homepage-outfit-button {
+  color: #fff;
+  background-color: #8982C6;
+  border-color: #8982C6;
+}
+
+.homepage-outfit-button:not([disabled]):not(.disabled).active, .homepage-outfit-button:not([disabled]):not(.disabled):active, .show>.homepage-outfit-button.dropdown-toggle {
+    // color: #212529;
+    color: #4CC9AC;
+    background-color: #8982C6;
+    border-color: #8982C6;
+    box-shadow: 0 0 0 0.2rem rgba(137,130,198,.5);
 }
 
 .show-page-button {

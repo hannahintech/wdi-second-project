@@ -1,5 +1,8 @@
 <ul class="container">
   <div class="row">
+    <a href="/"><h3>...back to homepage</h3></a>
+  </div>
+  <div class="row">
     <% items.forEach((item) => { %>
       <li class"col">
       <a href="/items/<%= item.id %>">
@@ -8,5 +11,10 @@
       </a>
       </li>
     <% }) %>
+
   </div>
 </ul>
+
+<% items.forEach((item) => { %>
+  <p><%= item %></p>
+  <% }) %>>

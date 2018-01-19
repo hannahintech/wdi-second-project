@@ -1,11 +1,13 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col">
-      <% outfit.items.forEach((itemImage) => { %>
-        <div class="outfit-image-div outfit-list">
-          <img src="<%= itemImage.image %>">
-        </div>
-      <% }); %>
+      <div class="outfit-list">
+        <% outfit.items.forEach((itemImage) => { %>
+          <div class="outfit-image-div">
+            <img src="<%= itemImage.image %>">
+          </div>
+        <% }); %>
+      </div>
     </div>
     <div class="col">
       <h3><%= outfit.name %></h2>
