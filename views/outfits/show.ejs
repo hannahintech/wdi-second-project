@@ -24,7 +24,7 @@
           <button name="id" type="submit" class="btn btn-success btn-lg show-page-button">favourite</button>
         </form>
       <% } %>
-      <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) === 0 ) {%>
+      <% if(locals.isLoggedIn && user.favouriteOutfits.indexOf(outfit.id) !== -1 ) {%>
         <form method="POST" action="/outfits/<%= outfit.id %>/unfavourite">
               <button name="id" type="submit" class="btn btn-success btn-lg show-page-button"><i class="fa fa-star" aria-hidden="true"></i></button>
         </form>
