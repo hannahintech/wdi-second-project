@@ -26,6 +26,7 @@ function createItem(req, res){
 
   Item
     .create(req.body)
+    .sort(req.body.category)
     .then(() => {
       res.redirect('/items');
     })
@@ -50,7 +51,7 @@ function showItem(req, res) {
 
 function editItem(req, res) {
   req.body.category = req.body.category.parseInt();
-  // necessary? 
+  // necessary?
   Item
     .findById(req.params.id)
     .exec()
