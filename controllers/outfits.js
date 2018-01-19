@@ -6,11 +6,14 @@ function outfitIndex(req, res) {
     .find()
     .populate('createdBy items items.createdBy')
     .exec()
+    // .then((items) => {
+    //   items.forEach(() => {
+    //     items.sort('category');
+    //   });
+    // })
     .then((outfits) => {
       // outfits.items <-- []
       // order items by category number
-
-
       res.render('outfits/index', { outfits });
     });
 }
