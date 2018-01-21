@@ -2,6 +2,9 @@
   <div class="row">
     <a href="/"><h3>...back to homepage</h3></a>
   </div>
+  <% if (!locals.isLoggedIn) { %>
+    <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up to create your own outfit!</a>
+  <% } %>
   <div class="row">
     <% outfits.forEach((outfit) => { %>
     <div class="outfit-list">

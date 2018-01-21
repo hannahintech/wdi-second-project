@@ -1,22 +1,69 @@
-<div class="container index-page">
+<%#
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="../assets/006-shirt.svg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">add an item</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+ %>
 
-  <div class="row">
-    <div class="col">
+
+<div class="container">
+
+  <div class="row justify-content-around">
     <% if (locals.isLoggedIn) { %>
-      <a href="/items/new" class="btn btn-outline-primary btn-lg btn-block homepage-button">add an item</a>
-      <a href="/outfits/new" class="btn btn-outline-primary btn-lg btn-block homepage-button">create an outfit</a>
-    <% } %>
-    </div>
-  </div>
-  <div class="row">
     <div class="col">
-      <a href="/outfits" class="btn btn-outline-success btn-lg btn-block homepage-button homepage-outfit-button">browse outfits</a>
-      <a href="/items" class="btn btn-outline-success btn-lg btn-block homepage-button">browse items</a>
-      <% if (!locals.isLoggedIn) { %>
-        <a href="/login" class="btn btn-outline-primary btn-lg btn-block">Log in</a>
-        <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up to create your own!</a>
-      <% } %>
+      <div class="card" style="width: 15rem;">
+        <img class="card-img-top" src="../assets/006-shirt.svg" alt="Card image cap">
+        <div class="card-body">
+          <a href="/items/new" class="btn btn-outline-primary btn-lg btn-block homepage-button">add an item</a>
+        </div>
+      </div>
     </div>
+    <div class="col">
+      <div class="card" style="width: 15rem;">
+        <img class="card-img-top" src="../assets/007-clothes.svg" alt="Card image cap">
+        <div class="card-body">
+          <a href="/outfits/new" class="btn btn-outline-primary btn-lg btn-block homepage-button">create an outfit</a>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <div class="col">
+      <div class="card" style="width: 15rem;">
+        <img class="card-img-top" src="../assets/outfit.svg" alt="Card image cap">
+        <div class="card-body">
+          <a href="/outfits" class="btn btn-outline-success btn-lg btn-block homepage-button homepage-outfit-button">browse outfits</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 15rem;">
+        <img class="card-img-top" src="../assets/hanger.svg" alt="Card image cap">
+        <div class="card-body">
+          <a href="/items" class="btn btn-outline-success btn-lg btn-block homepage-button">browse items</a>
+        </div>
+      </div>
+    </div>
+      <% if (!locals.isLoggedIn) { %>
+        <div class="col">
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="../assets/user-silhouette.svg" alt="Card image cap">
+            <div class="card-body">
+              <a href="/login" class="btn btn-outline-primary btn-lg btn-block">Log in</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="../assets/login.svg" alt="Card image cap">
+            <div class="card-body">
+              <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up!</a>
+            </div>
+          </div>
+        </div>
+      <% } %>
   </div>
-
 </div>

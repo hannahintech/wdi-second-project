@@ -71,6 +71,10 @@ a:hover {
   padding: 10px;
 }
 
+.card {
+  border: none;
+}
+
 button.btn.btn-primary.btn-block {
   color: #fff;
   background-color: #D439E1;
@@ -124,7 +128,7 @@ button.btn.btn-primary.btn-block {
 .homepage-button {
   border-color: #4CC9AC;
   border: 5px solid;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .homepage-outfit-button {
