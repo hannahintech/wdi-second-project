@@ -260,12 +260,20 @@ p {
 }
 
 .footer-div {
-  border-top: 0.5px solid;
+  border-top: 1px dotted;
   border-color: #8982C6;
 }
 
 .footer-links {
-  padding: 25px;
+  padding: 15px;
+}
+
+.fa-github {
+  font-size: 35px;
+}
+
+.fa-twitter {
+  font-size: 35px;
 }
 
 .form-item {

@@ -66,7 +66,7 @@ function showOutfit(req, res) {
 }
 
 function editOutfit(req, res) {
-
+// we need access to items as well, so all items will be displayed for editing!
   Outfit
     .findById(req.params.id)
     .populate('items')
