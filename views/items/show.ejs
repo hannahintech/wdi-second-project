@@ -15,6 +15,12 @@
     <% if (item.specialOccassion) { %>
       <h4> special occassion outfit! </h4>
     <% } %>
+    <% if (locals.isLoggedIn) { %>
+      <a href="/outfits/new" class="btn btn-outline-primary btn-lg btn-block homepage-button">create an outfit</a>
+    <% } %>
+    <% if (!locals.isLoggedIn) { %>
+      <a href="/register" class="btn btn-outline-danger btn-lg btn-block">Sign up to create an outfit!</a>
+    <% } %>
     <% if(item.createdBy || locals.user === 'hannah') { %>
       <% if(locals.isLoggedIn && item.belongsTo(user)) {%>
         <a class="btn btn-outline-success btn-lg show-page-button" href="/items/<%= item.id %>/edit">edit</a>
