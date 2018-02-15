@@ -19,7 +19,13 @@ I felt I learnt most from the fact I ended up with a product that felt a little 
 I was proud of how much I managed to learn during the week, and of how comfortable I became accessing data from the database at various levels of depth (so, for example, a user referenced by an item, which had been added to an outfit).
 
 tech used :
-to come
+* JavaScript
+* CSS
+* HTML
+* Node.Js
+* gulp
+* Express JS
+* Mongo and mongoose
 
 # plan for next steps:
   * I need to try and create a more seamless user experience and fill in the gaps which my patchwork planning left. (such as adding an item to an outfit from the individual item page). 
