@@ -20,7 +20,7 @@ I was proud of how much I managed to learn during the week, and of how comfortab
 
 tech used :
 * JavaScript
-* CSS
+* SCSS/SASS
 * HTML
 * Node.Js
 * gulp
