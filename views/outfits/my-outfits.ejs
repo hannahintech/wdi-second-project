@@ -1,3 +1,21 @@
 <div class="container">
-  <h3><%= `${locals.user.username}'s` %> favourite outfits, coming soon!</h3>
+  <h3><%= `${locals.user.username}'s` %></h3>
+  <% console.log(user.favouriteOutfits) %>
 </div>
+
+<div class="row">
+  <% user.favouriteOutfits.forEach((outfit) => { %>
+  <a href="/outfits/<%= outfit.id %>">
+  <div class="outfit-list">
+    <p class="outfit-name"><%= user.favouriteOutfits.name %></p>
+    <% user.favouriteOutfits.items.forEach((item) => { %>
+      <div class="outfit-image-div" style="background-image: url('<%= item.image %>')">
+      </div>
+    <% }); %>
+  </div>
+  </a>
+  <% }); %>
+</div>
+
+
+<%# I need to populate the data in the back end so I can access the actual outfit and not just the reference id %>

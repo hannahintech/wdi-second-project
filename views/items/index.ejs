@@ -1,25 +1,25 @@
 <ul class="container">
-  <div class="row justify-content-end">
-  <% if (!locals.isLoggedIn) { %>
-    <a href="/register" class="btn btn-outline-danger btn-lg">Sign up to create an outfit!</a>
-  <% } %>
-  <% if (locals.isLoggedIn) { %>
-    <a href="/outfits/new" class="btn btn-outline-success btn-lg">create an outfit</a>
-  <% } %>
-  </div>
-</div>
-  <div class="row justify-content-end">
-    <a href="/"><h5>...back to homepage</h5></a>
-  </div>
   <div class="row">
-    <% items.forEach((item) => { %>
-      <li class"col">
-      <a href="/items/<%= item.id %>">
-      <div class="item-image-div" style="background-image: url('<%= item.image %>')">
-      </div>
-      </a>
-      </li>
-    <% }) %>
-
+    <div class="col">
+      <% if (!locals.isLoggedIn) { %>
+        <a href="/register" class="btn btn-outline-danger btn-lg">Sign up to create an outfit!</a>
+      <% } %>
+      <% if (locals.isLoggedIn) { %>
+        <a href="/outfits/new" class="btn btn-outline-success btn-lg">create an outfit</a>
+      <% } %>
+    </div>
+    <div class="col">
+      <a href="/"><h5>...back to homepage</h5></a>
+    </div>
+    <div class="row">
+      <% items.forEach((item) => { %>
+        <li class"col">
+        <a href="/items/<%= item.id %>">
+        <div class="item-image-div" style="background-image: url('<%= item.image %>')">
+        </div>
+        </a>
+        </li>
+      <% }) %>
+    </div>
   </div>
 </ul>

@@ -55,6 +55,9 @@ router.route('/outfits/:id/edit')
 router.route('/outfits/:id/favourite')
   .post(users.addToFavourites);
 
+router.route('/outfits/:id/unfavourite')
+  .post(users.removeFromFavourites);
+
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);

@@ -205,8 +205,10 @@ div {
     border-radius: 10px;
   }
   &.outfit-list {
-    display: flex;
-    flex-direction: column;
+    width: 250px;
+    min-height: 250px;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     padding: 5px;
     border-color: #d439e1;
@@ -214,10 +216,8 @@ div {
     border-style: solid;
     margin: 20px;
     border-radius: 10px;
-    box-sizing: content-box;
   }
   &.item-image-div {
-    display: flex;
     justify-content: center;
     width: 130px;
     min-height: 100px;
